@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import ProductPage from "@/pages/ProductPage";
+import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
@@ -27,6 +28,7 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/product/:id" component={ProductPage} />
+        <Route path="/about" component={About} />
         <Route component={NotFound} />
       </Switch>
     </>

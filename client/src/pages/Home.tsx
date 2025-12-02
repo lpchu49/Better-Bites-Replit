@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ProductShowcase } from "@/components/ProductShowcase";
-import { Mission } from "@/components/Mission";
 import { Contact } from "@/components/Contact";
 
 export default function Home() {
@@ -11,7 +10,6 @@ export default function Home() {
       <main>
         <Hero />
         <ProductShowcase />
-        <Mission />
       </main>
       <Contact />
     </div>
