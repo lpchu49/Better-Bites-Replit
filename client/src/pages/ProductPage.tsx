@@ -97,33 +97,52 @@ export default function ProductPage() {
                 {/* Nutrition Section - Full Width */}
                 <div className="border border-border rounded-2xl p-5 w-full">
                   <h3 className="font-serif font-bold text-lg mb-4">Nutrition Facts</h3>
-                  <div className="grid grid-cols-3 gap-x-4 gap-y-4">
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Energy</span>
-                      <span className="text-base font-bold text-foreground">{product.nutrition.kcal} kcal</span>
+                  
+                  {/* Serving Size */}
+                  <div className="border-b border-border pb-3 mb-3">
+                    <span className="text-sm font-medium text-foreground">Serving size: 1 ball (10g)</span>
+                  </div>
+                  
+                  {/* Nutrients List */}
+                  <div className="space-y-2">
+                    {/* Calories */}
+                    <div className="flex justify-between items-center py-1 border-b border-border/50">
+                      <span className="text-sm font-medium text-foreground">Calories</span>
+                      <span className="text-sm font-bold text-foreground">{product.nutrition.kcal} kcal</span>
                     </div>
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Protein</span>
-                      <span className="text-base font-bold text-foreground">{product.nutrition.protein}</span>
+                    
+                    {/* Protein */}
+                    <div className="flex justify-between items-center py-1 border-b border-border/50">
+                      <span className="text-sm font-medium text-foreground">Protein</span>
+                      <span className="text-sm font-bold text-foreground">{product.nutrition.protein}</span>
                     </div>
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Fiber</span>
-                      <span className="text-base font-bold text-foreground">{product.nutrition.fiber}</span>
+                    
+                    {/* Fat */}
+                    <div className="flex justify-between items-center py-1 border-b border-border/50">
+                      <span className="text-sm font-medium text-foreground">Fat</span>
+                      <span className="text-sm font-bold text-foreground">{product.nutrition.fat}</span>
                     </div>
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Fat</span>
-                      <span className="text-base font-bold text-foreground">{product.nutrition.fat}</span>
+                    
+                    {/* Total Carbohydrates */}
+                    <div className="flex justify-between items-center py-1">
+                      <span className="text-sm font-medium text-foreground">Total Carbohydrates</span>
+                      <span className="text-sm font-bold text-foreground">{product.nutrition.carbs}</span>
                     </div>
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Carbs</span>
-                      <span className="text-base font-bold text-foreground">{product.nutrition.carbs}</span>
+                    
+                    {/* Fiber - nested under Carbs */}
+                    <div className="flex justify-between items-center py-1 pl-4 border-l-2 border-muted">
+                      <span className="text-sm text-muted-foreground">Fiber</span>
+                      <span className="text-sm font-medium text-foreground">{product.nutrition.fiber}</span>
                     </div>
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Sugar*</span>
-                      <span className="text-base font-bold text-foreground">{product.nutrition.sugar}</span>
+                    
+                    {/* Sugar - nested under Carbs */}
+                    <div className="flex justify-between items-center py-1 pl-4 border-l-2 border-muted border-b border-border/50">
+                      <span className="text-sm text-muted-foreground">Sugar*</span>
+                      <span className="text-sm font-medium text-foreground">{product.nutrition.sugar}</span>
                     </div>
                   </div>
-                  <p className="text-[10px] text-muted-foreground mt-4 text-right">*Natural sugar from dates</p>
+                  
+                  <p className="text-[10px] text-muted-foreground mt-4">*Natural sugar from dates</p>
                 </div>
               </div>
             </div>
