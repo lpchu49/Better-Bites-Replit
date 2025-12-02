@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { OrderModal } from "@/components/OrderModal";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,9 +32,11 @@ export function Navbar() {
               </a>
             </Link>
           ))}
-          <button className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors shadow-sm">
-            Order Now
-          </button>
+          <OrderModal>
+            <button className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors shadow-sm cursor-pointer">
+              Order Now
+            </button>
+          </OrderModal>
         </div>
 
         {/* Mobile Menu Button */}
@@ -65,9 +68,11 @@ export function Navbar() {
                   </a>
                 </Link>
               ))}
-              <button className="bg-primary text-primary-foreground w-full py-3 rounded-full font-medium mt-2">
-                Order Now
-              </button>
+              <OrderModal>
+                <button className="bg-primary text-primary-foreground w-full py-3 rounded-full font-medium mt-2 cursor-pointer">
+                  Order Now
+                </button>
+              </OrderModal>
             </div>
           </motion.div>
         )}

@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Contact } from "@/components/Contact";
 import { ArrowLeft, Leaf } from "lucide-react";
 import NotFound from "@/pages/not-found";
+import { OrderModal } from "@/components/OrderModal";
 
 export default function ProductPage() {
   const [match, params] = useRoute("/product/:id");
@@ -97,9 +98,11 @@ export default function ProductPage() {
                 </div>
               </div>
 
-              <button className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 transform hover:-translate-y-0.5">
-                Order {product.name} Box
-              </button>
+              <OrderModal defaultProduct={product.id}>
+                <button className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 transform hover:-translate-y-0.5 cursor-pointer">
+                  Order {product.name} Box
+                </button>
+              </OrderModal>
             </div>
           </div>
         </div>
