@@ -37,8 +37,11 @@ export default function ProductPage() {
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            {/* Image Section - Smaller */}
+            {/* Left Column - Product Name + Image */}
             <div className="relative max-w-sm mx-auto lg:mx-0">
+              {/* Product Name - Above Photo */}
+              <h1 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-4 leading-tight">{product.name}</h1>
+              
               <Carousel className="w-full rounded-2xl overflow-hidden bg-secondary/20">
                 <CarouselContent>
                   {productImages.map((img, index) => (
@@ -69,7 +72,6 @@ export default function ProductPage() {
             {/* Content Section - Right Side */}
             <div className="space-y-6">
               <div>
-                <h1 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-1 leading-tight">{product.name}</h1>
                 <span className="text-primary font-bold tracking-wider uppercase text-xs mb-3 block">{product.tagline}</span>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {product.description}
