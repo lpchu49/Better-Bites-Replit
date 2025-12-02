@@ -5,12 +5,15 @@ export function Mission() {
   const benefits = [
     "No Added Sugars",
     "Gluten Free",
-    "Plant Based",
-    "Preservative Free"
+    "Vegan",
+    "Preservative Free",
   ];
 
   return (
-    <section id="mission" className="py-24 bg-muted/30 relative overflow-hidden">
+    <section
+      id="mission"
+      className="py-24 bg-muted/30 relative overflow-hidden"
+    >
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
 
@@ -27,13 +30,16 @@ export function Mission() {
             </h2>
             <div className="prose prose-lg text-muted-foreground">
               <p className="mb-6">
-                Our mission is simple: to create snacks that are as honest as they are delicious. We started Better Bites because we were tired of "health foods" filled with unpronounceable ingredients and hidden syrups.
-              </p>
-              <p className="mb-6">
-                We believe that nature provides everything we need to feel energized and vibrant. That's why our energy balls are made from just a handful of raw, whole ingredients.
+                Our mission is simple: to create snacks that are as honest as
+                they are delicious. We believe that nature provides everything
+                we need to feel energized and vibrant, without unpronouncable
+                ingredients and hidden syrups. That's why our energy balls are
+                made from just a handful of raw, whole, recognizable
+                ingredients.
               </p>
               <p>
-                Every bite is a promise of quality, sustainability, and pure, unadulterated flavor.
+                Every bite is our promise of quality, sustainability, and pure,
+                simple flavor.
               </p>
             </div>
 
@@ -54,18 +60,23 @@ export function Mission() {
             transition={{ duration: 0.8 }}
             className="relative h-[600px] rounded-[2rem] overflow-hidden bg-stone-200"
           >
-             <div className="absolute inset-0 bg-stone-900 p-12 flex flex-col justify-between">
-                <div className="text-white/20 text-9xl font-serif font-black leading-none select-none">
-                  REAL<br/>FOOD
-                </div>
-                <div className="space-y-6">
-                  <div className="h-px w-24 bg-primary" />
-                  <blockquote className="text-2xl md:text-3xl text-white font-serif italic">
-                    "We don't just sell snacks; we advocate for a return to real, whole food."
-                  </blockquote>
-                  <cite className="text-white/60 not-italic block">— The Better Bites Team</cite>
-                </div>
-             </div>
+            <div className="absolute inset-0 bg-stone-900 p-12 flex flex-col justify-between">
+              <div className="text-white/20 text-9xl font-serif font-black leading-none select-none">
+                REAL
+                <br />
+                FOOD
+              </div>
+              <div className="space-y-6">
+                <div className="h-px w-24 bg-primary" />
+                <blockquote className="text-2xl md:text-3xl text-white font-serif italic">
+                  "We don't just sell snacks; we advocate for a return to real,
+                  whole food."
+                </blockquote>
+                <cite className="text-white/60 not-italic block">
+                  — The Better Bites Team
+                </cite>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

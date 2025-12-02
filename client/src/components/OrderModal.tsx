@@ -1,9 +1,22 @@
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { products } from "@/components/ProductShowcase";
@@ -19,12 +32,19 @@ interface OrderModalProps {
 export function OrderModal({ children, defaultProduct }: OrderModalProps) {
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
-  const [selectedProduct, setSelectedProduct] = useState(defaultProduct || "assorted");
-  
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<InsertOrder>({
+  const [selectedProduct, setSelectedProduct] = useState(
+    defaultProduct || "assorted",
+  );
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<InsertOrder>({
     defaultValues: {
       product: defaultProduct || "assorted",
-    }
+    },
   });
 
   const orderMutation = useMutation({
@@ -34,12 +54,12 @@ export function OrderModal({ children, defaultProduct }: OrderModalProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      
+
       if (!response.ok) {
         const error = await response.json();
         throw new Error(error.error || "Failed to submit order");
       }
-      
+
       return response.json();
     },
     onSuccess: () => {
@@ -53,7 +73,8 @@ export function OrderModal({ children, defaultProduct }: OrderModalProps) {
     onError: (error: Error) => {
       toast({
         title: "Error",
-        description: error.message || "Failed to submit order. Please try again.",
+        description:
+          error.message || "Failed to submit order. Please try again.",
         variant: "destructive",
       });
     },
@@ -68,14 +89,15 @@ export function OrderModal({ children, defaultProduct }: OrderModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        {children}
-      </DialogTrigger>
+      <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[500px] bg-background border-border">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-serif font-bold text-foreground">Place an Order</DialogTitle>
+          <DialogTitle className="text-2xl font-serif font-bold text-foreground">
+            Place an Order
+          </DialogTitle>
           <DialogDescription>
-            Fill out the form below and we'll get back to you with payment and shipping details.
+            Fill out the form below and we'll get back to you with payment and
+            shipping details.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mt-4">
@@ -83,36 +105,44 @@ export function OrderModal({ children, defaultProduct }: OrderModalProps) {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
-                <Input 
-                  id="name" 
-                  placeholder="Jane Doe" 
+                <Input
+                  id="name"
+                  placeholder="Jane Doe"
                   {...register("name", { required: true })}
                 />
-                {errors.name && <span className="text-xs text-destructive">Name is required</span>}
+                {errors.name && (
+                  <span className="text-xs text-destructive">
+                    Name is required
+                  </span>
+                )}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone</Label>
-                <Input 
-                  id="phone" 
-                  type="tel" 
+                <Input
+                  id="phone"
+                  type="tel"
                   placeholder="(555) 123-4567"
                   {...register("phone")}
                 />
               </div>
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input 
-                id="email" 
-                type="email" 
+              <Input
+                id="email"
+                type="email"
                 placeholder="jane@example.com"
                 {...register("email", { required: true })}
               />
-              {errors.email && <span className="text-xs text-destructive">Email is required</span>}
+              {errors.email && (
+                <span className="text-xs text-destructive">
+                  Email is required
+                </span>
+              )}
             </div>
 
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
               <Label htmlFor="product">Interested In</Label>
               <Select value={selectedProduct} onValueChange={setSelectedProduct}>
                 <SelectTrigger>
@@ -126,11 +156,11 @@ export function OrderModal({ children, defaultProduct }: OrderModalProps) {
                 </SelectContent>
               </Select>
             </div>
-
+ */}
             <div className="space-y-2">
-              <Label htmlFor="message">Message / Special Requests</Label>
-              <Textarea 
-                id="message" 
+              <Label htmlFor="message">Your Order</Label>
+              <Textarea
+                id="message"
                 placeholder="Quantity, allergies, or shipping address..."
                 {...register("message")}
               />
@@ -138,10 +168,16 @@ export function OrderModal({ children, defaultProduct }: OrderModalProps) {
           </div>
 
           <div className="flex justify-end gap-4">
-            <Button type="button" variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
-            <Button 
-              type="submit" 
-              className="bg-primary text-primary-foreground hover:bg-primary/90" 
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setOpen(false)}
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
               disabled={orderMutation.isPending}
             >
               {orderMutation.isPending ? "Sending..." : "Send Request"}

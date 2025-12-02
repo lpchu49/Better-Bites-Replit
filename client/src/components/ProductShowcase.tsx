@@ -11,8 +11,7 @@ export const products = [
     id: "classic",
     name: "Classic",
     tagline: "Simply perfect",
-    short_description:
-      "The ball that started it all. Sweet dates, crunchy almonds, and tropical coconut.",
+    short_description: "Sweet dates, crunchy almonds, and tropical coconut.",
     description:
       "Our signature date ball that started it all. A harmonious blend of sweet dates, crunchy almonds, and tropical coconut. Pure, simple, and absolutely delicious.",
     image: coconutImg,
@@ -36,13 +35,7 @@ export const products = [
     description:
       "For the chocolate lovers. Premium dates blended with almond, walnuts, and rich cocoa powder, studded with 65% dark chocolate chips. Decadent, yet wholesome.",
     image: chocolateImg,
-    ingredients: [
-      "Dates",
-      "Almonds",
-      "Walnuts",
-      "65% Dark Chocolate",
-      "Cocoa Powder",
-    ],
+    ingredients: ["Dates", "Almonds", "Walnuts", "Dark Chocolate 65%", "Cocoa"],
     nutrition: {
       kcal: 49,
       protein: "1.3g",
@@ -66,7 +59,7 @@ export const products = [
       "Cashews",
       "Pistachios",
       "Desiccated Coconut",
-      "Matcha Powder",
+      "Matcha",
     ],
     nutrition: {
       kcal: 48,
@@ -87,14 +80,7 @@ export const products = [
     description:
       "A vibrant twist on our classic recipe. Sweet dates and creamy cashews meet tangy lemon and raisins, all wrapped in delicate coconut. A burst of sunshine in every bite.",
     image: lemonImg,
-    ingredients: [
-      "Dates",
-      "Cashews",
-      "Lemon Juice",
-      "Lemon Zest",
-      "Raisins",
-      "Desiccated Coconut",
-    ],
+    ingredients: ["Dates", "Cashews", "Lemon", "Raisins", "Desiccated Coconut"],
     nutrition: {
       kcal: 46,
       protein: "1.2g",
