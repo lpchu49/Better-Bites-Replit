@@ -10,18 +10,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { products } from "@/components/ProductShowcase";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 import type { InsertOrder } from "@shared/schema";
 
 interface OrderModalProps {
@@ -32,6 +25,7 @@ interface OrderModalProps {
 export function OrderModal({ children, defaultProduct }: OrderModalProps) {
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
+  const { t } = useTranslation();
   const [selectedProduct, setSelectedProduct] = useState(
     defaultProduct || "assorted",
   );
@@ -66,15 +60,14 @@ export function OrderModal({ children, defaultProduct }: OrderModalProps) {
       setOpen(false);
       reset();
       toast({
-        title: "Order Request Sent!",
-        description: "We'll be in touch shortly to confirm your order details.",
+        title: t('order.successTitle'),
+        description: t('order.successDescription'),
       });
     },
     onError: (error: Error) => {
       toast({
-        title: "Error",
-        description:
-          error.message || "Failed to submit order. Please try again.",
+        title: t('order.errorTitle'),
+        description: error.message || t('order.errorDescription'),
         variant: "destructive",
       });
     },
@@ -93,75 +86,59 @@ export function OrderModal({ children, defaultProduct }: OrderModalProps) {
       <DialogContent className="sm:max-w-[500px] bg-background border-border">
         <DialogHeader>
           <DialogTitle className="text-2xl font-serif font-bold text-foreground">
-            Place an Order
+            {t('order.title')}
           </DialogTitle>
           <DialogDescription>
-            Fill out the form below and we'll get back to you with payment and
-            shipping details.
+            {t('order.description')}
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mt-4">
           <div className="grid gap-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="name">{t('order.name')}</Label>
                 <Input
                   id="name"
-                  placeholder="Jane Doe"
+                  placeholder={t('order.namePlaceholder')}
                   {...register("name", { required: true })}
                 />
                 {errors.name && (
                   <span className="text-xs text-destructive">
-                    Name is required
+                    {t('order.nameRequired')}
                   </span>
                 )}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone</Label>
+                <Label htmlFor="phone">{t('order.phone')}</Label>
                 <Input
                   id="phone"
                   type="tel"
-                  placeholder="(555) 123-4567"
+                  placeholder={t('order.phonePlaceholder')}
                   {...register("phone")}
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('order.email')}</Label>
               <Input
                 id="email"
                 type="email"
-                placeholder="jane@example.com"
+                placeholder={t('order.emailPlaceholder')}
                 {...register("email", { required: true })}
               />
               {errors.email && (
                 <span className="text-xs text-destructive">
-                  Email is required
+                  {t('order.emailRequired')}
                 </span>
               )}
             </div>
 
-            {/* <div className="space-y-2">
-              <Label htmlFor="product">Interested In</Label>
-              <Select value={selectedProduct} onValueChange={setSelectedProduct}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a product" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="assorted">Assorted Box</SelectItem>
-                  {products.map(p => (
-                    <SelectItem key={p.id} value={p.id}>{p.name} Box</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
- */}
             <div className="space-y-2">
-              <Label htmlFor="message">Your Order</Label>
+              <Label htmlFor="message">{t('order.yourOrder')}</Label>
               <Textarea
                 id="message"
-                placeholder="Quantity, allergies, or shipping address..."
+                placeholder={t('order.orderPlaceholder')}
                 {...register("message")}
               />
             </div>
@@ -173,14 +150,14 @@ export function OrderModal({ children, defaultProduct }: OrderModalProps) {
               variant="outline"
               onClick={() => setOpen(false)}
             >
-              Cancel
+              {t('order.cancel')}
             </Button>
             <Button
               type="submit"
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               disabled={orderMutation.isPending}
             >
-              {orderMutation.isPending ? "Sending..." : "Send Request"}
+              {orderMutation.isPending ? t('order.sending') : t('order.sendRequest')}
             </Button>
           </div>
         </form>

@@ -2,8 +2,11 @@ import { Navbar } from "@/components/Navbar";
 import { Contact } from "@/components/Contact";
 import { motion } from "framer-motion";
 import { Heart, Leaf, Users, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
       <Navbar />
@@ -18,11 +21,10 @@ export default function About() {
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground mb-6 leading-tight">
-              Our Story
+              {t('about.title')}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              A passion for wholesome, delicious snacks made with love and real,
-              simple ingredients.
+              {t('about.subtitle')}
             </p>
           </motion.div>
         </section>
@@ -38,27 +40,12 @@ export default function About() {
               className="bg-secondary/20 rounded-3xl p-8 md:p-12"
             >
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-6">
-                Crafted with Purpose
+                {t('about.originTitle')}
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Better Bites started in a small kitchen with a simple
-                  frustration: why are most "healthy" snacks filled with
-                  ingredients we can't pronounce?
-                </p>
-                <p>
-                  We were tired of reading labels packed with artificial
-                  sweeteners, preservatives, and mystery additives. We craved
-                  something real — a snack that was as honest as it was
-                  delicious.
-                </p>
-                <p>
-                  So we started experimenting. Dates became our natural
-                  sweetener. Almonds, cashews, and walnuts added crunch and
-                  nutrition. Coconut, cacao, and matcha brought flavor and
-                  variety. No cooking required — just pure, raw ingredients
-                  blended together with care.
-                </p>
+                <p>{t('about.originP1')}</p>
+                <p>{t('about.originP2')}</p>
+                <p>{t('about.originP3')}</p>
               </div>
             </motion.div>
           </div>
@@ -78,13 +65,10 @@ export default function About() {
                 <Heart className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-serif font-bold text-foreground mb-4">
-                Our Mission
+                {t('about.missionTitle')}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                To create clean, wholesome, and real snacks that make you feel
-                good. We're here to prove that healthy eating doesn't mean
-                sacrificing taste — and that transparency in ingredients should
-                be the norm, not the exception.
+                {t('about.missionText')}
               </p>
             </motion.div>
 
@@ -99,13 +83,10 @@ export default function About() {
                 <Sparkles className="w-6 h-6 text-secondary-foreground" />
               </div>
               <h3 className="text-xl font-serif font-bold text-foreground mb-4">
-                Our Vision
+                {t('about.visionTitle')}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                A world where everyone has access to snacks that fuel their day
-                without compromise. We envision a future where reading
-                ingredient labels brings joy, not confusion — and where
-                "healthy" simply means "real."
+                {t('about.visionText')}
               </p>
             </motion.div>
           </div>
@@ -122,10 +103,10 @@ export default function About() {
               className="text-center mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-4">
-                Why We're Here
+                {t('about.whyTitle')}
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Every bite we create is guided by these core beliefs.
+                {t('about.whySubtitle')}
               </p>
             </motion.div>
 
@@ -141,10 +122,10 @@ export default function About() {
                   <Leaf className="w-7 h-7 text-green-600" />
                 </div>
                 <h4 className="font-bold text-foreground mb-2">
-                  Real Ingredients
+                  {t('about.realIngredients')}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  If you can't recognize it, we don't use it. Simple as that.
+                  {t('about.realIngredientsDesc')}
                 </p>
               </motion.div>
 
@@ -159,10 +140,10 @@ export default function About() {
                   <Heart className="w-7 h-7 text-amber-600" />
                 </div>
                 <h4 className="font-bold text-foreground mb-2">
-                  Made With Love
+                  {t('about.madeWithLove')}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  Every batch is handcrafted with attention and care.
+                  {t('about.madeWithLoveDesc')}
                 </p>
               </motion.div>
 
@@ -177,10 +158,10 @@ export default function About() {
                   <Users className="w-7 h-7 text-blue-600" />
                 </div>
                 <h4 className="font-bold text-foreground mb-2">
-                  Community First
+                  {t('about.communityFirst')}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  We're building more than a brand — we're building a movement.
+                  {t('about.communityFirstDesc')}
                 </p>
               </motion.div>
             </div>

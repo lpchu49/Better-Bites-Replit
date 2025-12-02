@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Mission() {
+  const { t } = useTranslation();
+
   const benefits = [
-    "No Added Sugars",
-    "Gluten Free",
-    "Vegan",
-    "Preservative Free",
+    t('mission.benefits.noAddedSugars'),
+    t('mission.benefits.glutenFree'),
+    t('mission.benefits.vegan'),
+    t('mission.benefits.preservativeFree'),
   ];
 
   return (
@@ -26,22 +29,17 @@ export function Mission() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 text-foreground">
-              Food that fuels your soul.
+              {t('mission.title')}
             </h2>
             <div className="prose prose-lg text-muted-foreground">
               <p className="mb-6">
-                Our mission is simple: to create snacks that are as honest as
-                they are delicious.
+                {t('mission.paragraph1')}
               </p>
               <p className="mb-6">
-                We believe that nature provides everything we need to feel
-                energized and vibrant, without unpronouncable ingredients and
-                hidden syrups. That's why our energy balls are made from just a
-                handful of raw, whole, recognizable ingredients.
+                {t('mission.paragraph2')}
               </p>
               <p>
-                Every bite is our promise of quality, sustainability, and pure,
-                simple flavor.
+                {t('mission.paragraph3')}
               </p>
             </div>
 
@@ -71,11 +69,10 @@ export function Mission() {
               <div className="space-y-6">
                 <div className="h-px w-24 bg-primary" />
                 <blockquote className="text-2xl md:text-3xl text-white font-serif italic">
-                  "We don't just sell snacks; we advocate for a return to real,
-                  whole food."
+                  {t('mission.quote')}
                 </blockquote>
                 <cite className="text-white/60 not-italic block">
-                  — The Better Bites Team
+                  {t('mission.quoteAuthor')}
                 </cite>
               </div>
             </div>

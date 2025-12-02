@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Leaf } from "lucide-react";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 import coconutImg from "@assets/generated_images/classic_date_almond_coconut_ball.png";
 import chocolateImg from "@assets/generated_images/lux_chocolate_date_ball.png";
 import lemonImg from "@assets/generated_images/zesty_lemon_date_ball.png";
@@ -9,13 +10,8 @@ import pistachioImg from "@assets/generated_images/pistachio_coated_date_ball.pn
 export const products = [
   {
     id: "classic",
-    name: "Classic",
-    tagline: "Simply perfect",
-    short_description: "Sweet dates, crunchy almonds, and tropical coconut.",
-    description:
-      "Our signature date ball that started it all. A harmonious blend of sweet dates, crunchy almonds, and tropical coconut. Pure, simple, and absolutely delicious.",
     image: coconutImg,
-    ingredients: ["Dates", "Almonds", "Desiccated Coconut"],
+    ingredients: ["dates", "almonds", "desiccatedCoconut"],
     nutrition: {
       kcal: 49,
       protein: "1.4g",
@@ -28,14 +24,8 @@ export const products = [
   },
   {
     id: "lux",
-    name: "Lux",
-    tagline: "Indulgently rich",
-    short_description:
-      "A brownie-like experience without the guilt. Rich, dark, and luxurious.",
-    description:
-      "For the chocolate lovers. Premium dates blended with almond, walnuts, and rich cocoa powder, studded with 65% dark chocolate chips. Decadent, yet wholesome.",
     image: chocolateImg,
-    ingredients: ["Dates", "Almonds", "Walnuts", "Dark Chocolate 65%", "Cocoa"],
+    ingredients: ["dates", "almonds", "walnuts", "darkChocolate", "cocoa"],
     nutrition: {
       kcal: 49,
       protein: "1.3g",
@@ -48,19 +38,8 @@ export const products = [
   },
   {
     id: "zen",
-    name: "Zen",
-    tagline: "Calm & balanced",
-    short_description: "Vibrant green tea energy for focused calm and clarity.",
-    description:
-      "Find your moment of peace with this unique blend. Earthy matcha green tea powder harmonizes with pistachios, dates, and cashews, finished with a touch of coconut. A mindful treat.",
     image: pistachioImg,
-    ingredients: [
-      "Dates",
-      "Cashews",
-      "Pistachios",
-      "Desiccated Coconut",
-      "Matcha",
-    ],
+    ingredients: ["dates", "cashews", "pistachios", "desiccatedCoconut", "matcha"],
     nutrition: {
       kcal: 48,
       protein: "1.3g",
@@ -73,14 +52,8 @@ export const products = [
   },
   {
     id: "zesty",
-    name: "Zesty",
-    tagline: "Bright & refreshing",
-    short_description:
-      "A bright burst of sunshine with fresh lemon and sweet raisins.",
-    description:
-      "A vibrant twist on our classic recipe. Sweet dates and creamy cashews meet tangy lemon and raisins, all wrapped in delicate coconut. A burst of sunshine in every bite.",
     image: lemonImg,
-    ingredients: ["Dates", "Cashews", "Lemon", "Raisins", "Desiccated Coconut"],
+    ingredients: ["dates", "cashews", "lemon", "raisins", "desiccatedCoconut"],
     nutrition: {
       kcal: 46,
       protein: "1.2g",
@@ -94,16 +67,17 @@ export const products = [
 ];
 
 export function ProductShowcase() {
+  const { t } = useTranslation();
+
   return (
     <section id="products" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-20">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-foreground">
-            Simple. Real. Delicious.
+            {t('products.title')}
           </h2>
           <p className="text-muted-foreground text-lg">
-            Four distinct flavors, one simple philosophy: real food tastes
-            better.
+            {t('products.subtitle')}
           </p>
         </div>
 
@@ -122,12 +96,12 @@ export function ProductShowcase() {
                 >
                   <motion.img
                     src={product.image}
-                    alt={product.name}
+                    alt={t(`products.${product.id}.name`)}
                     className="w-full h-full object-cover mix-blend-overlay opacity-90 md:mix-blend-normal md:opacity-100 transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Nutrition Badge */}
                   <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-sm text-xs font-medium text-foreground">
-                    {product.nutrition.kcal} kcal / ball
+                    {product.nutrition.kcal} {t('products.kcalPerBall')}
                   </div>
                 </div>
 
@@ -135,22 +109,22 @@ export function ProductShowcase() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
-                        {product.name}
+                        {t(`products.${product.id}.name`)}
                       </h3>
                       <p className="text-primary font-medium text-sm uppercase tracking-wide">
-                        {product.tagline}
+                        {t(`products.${product.id}.tagline`)}
                       </p>
                     </div>
                   </div>
 
                   <p className="text-muted-foreground leading-relaxed">
-                    {product.short_description}
+                    {t(`products.${product.id}.shortDescription`)}
                   </p>
 
                   <div className="pt-4 border-t border-border">
                     <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
                       <Leaf className="w-4 h-4 text-green-600" />
-                      Ingredients
+                      {t('products.ingredients')}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {product.ingredients.map((ing) => (
@@ -158,7 +132,7 @@ export function ProductShowcase() {
                           key={ing}
                           className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
                         >
-                          {ing}
+                          {t(`products.ingredientNames.${ing}`)}
                         </span>
                       ))}
                     </div>

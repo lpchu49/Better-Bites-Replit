@@ -1,7 +1,9 @@
-import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Contact() {
+  const { t } = useTranslation();
+
   return (
     <footer id="contact" className="bg-stone-900 text-stone-200 py-20">
       <div className="container mx-auto px-6">
@@ -11,8 +13,7 @@ export function Contact() {
               Better Bites.
             </h3>
             <p className="text-stone-400 mb-6 max-w-xs">
-              Handcrafted energy balls made from whole ingredients. Fueling your
-              day, naturally.
+              {t('contact.brandDescription')}
             </p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-primary transition-colors">
@@ -25,28 +26,28 @@ export function Contact() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Quick Links</h4>
+            <h4 className="text-white font-bold mb-6">{t('contact.quickLinks')}</h4>
             <ul className="space-y-4 text-stone-400">
               <li>
                 <a href="/" className="hover:text-primary transition-colors">
-                  Home
+                  {t('nav.home')}
                 </a>
               </li>
               <li>
                 <a href="/#products" className="hover:text-primary transition-colors">
-                  Our Products
+                  {t('nav.ourProducts')}
                 </a>
               </li>
               <li>
                 <a href="/about" className="hover:text-primary transition-colors">
-                  About Us
+                  {t('nav.aboutUs')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Get in Touch</h4>
+            <h4 className="text-white font-bold mb-6">{t('contact.getInTouch')}</h4>
             <ul className="space-y-4 text-stone-400">
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary" />
@@ -65,13 +66,13 @@ export function Contact() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-stone-500">
-          <p>&copy; 2025 Better Bites. All rights reserved.</p>
+          <p>{t('contact.copyright')}</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
+              {t('contact.privacyPolicy')}
             </a>
             <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
+              {t('contact.termsOfService')}
             </a>
           </div>
         </div>
