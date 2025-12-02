@@ -1,38 +1,28 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { type Order, type InsertOrder, orders } from "@shared/schema";
+import { drizzle } from "drizzle-orm/neon-serverless";
+import { Pool } from "@neondatabase/serverless";
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  createOrder(order: InsertOrder): Promise<Order>;
+  getOrders(): Promise<Order[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
+export class DbStorage implements IStorage {
+  private db;
 
   constructor() {
-    this.users = new Map();
+    const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+    this.db = drizzle(pool);
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+  async createOrder(insertOrder: InsertOrder): Promise<Order> {
+    const [order] = await this.db.insert(orders).values(insertOrder).returning();
+    return order;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async getOrders(): Promise<Order[]> {
+    return this.db.select().from(orders).orderBy(orders.createdAt);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DbStorage();
