@@ -161,21 +161,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* Closing Statement */}
-        <section className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center bg-stone-900 text-white rounded-3xl p-10 md:p-14"
-          >
-            <blockquote className="text-xl md:text-2xl font-serif italic mb-6">
-              "We don't just sell snacks; we advocate for a return to real, whole food."
-            </blockquote>
-            <p className="text-white/60">— The Better Bites Team</p>
-          </motion.div>
-        </section>
       </main>
 
       <Contact />
