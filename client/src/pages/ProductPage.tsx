@@ -2,9 +2,15 @@ import { useRoute, Link } from "wouter";
 import { products } from "@/components/ProductShowcase";
 import { Navbar } from "@/components/Navbar";
 import { Contact } from "@/components/Contact";
-import { ArrowLeft, Leaf } from "lucide-react";
+import { ArrowLeft, Leaf, ArrowRight } from "lucide-react";
 import NotFound from "@/pages/not-found";
-import { OrderModal } from "@/components/OrderModal";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function ProductPage() {
   const [match, params] = useRoute("/product/:id");
@@ -14,6 +20,9 @@ export default function ProductPage() {
   const product = products.find(p => p.id === params.id);
   
   if (!product) return <NotFound />;
+
+  // Duplicate image to simulate gallery for now
+  const productImages = [product.image, product.image, product.image];
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
@@ -27,82 +36,96 @@ export default function ProductPage() {
             </a>
           </Link>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-            {/* Image Section - Smaller (4 columns) */}
-            <div className="md:col-span-4">
-              <div className={`aspect-square rounded-[2rem] overflow-hidden relative ${product.color} shadow-inner`}>
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Image Section - Larger (50% width) */}
+            <div className="relative">
+              <Carousel className="w-full rounded-[2rem] overflow-hidden bg-secondary/20">
+                <CarouselContent>
+                  {productImages.map((img, index) => (
+                    <CarouselItem key={index}>
+                       <div className={`aspect-square relative ${product.color} overflow-hidden`}>
+                         <img 
+                           src={img} 
+                           alt={`${product.name} view ${index + 1}`}
+                           className="w-full h-full object-cover"
+                         />
+                       </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                {/* Navigation Controls */}
+                <CarouselPrevious className="left-4 bg-white/80 hover:bg-white border-none shadow-sm" />
+                <CarouselNext className="right-4 bg-white/80 hover:bg-white border-none shadow-sm" />
+              </Carousel>
+              
+              {/* Dots indicator simulation (visual only for now since we need state for active dot) */}
+              <div className="flex justify-center gap-2 mt-6">
+                <div className="w-2 h-2 rounded-full bg-primary"></div>
+                <div className="w-2 h-2 rounded-full bg-muted-foreground/30"></div>
+                <div className="w-2 h-2 rounded-full bg-muted-foreground/30"></div>
               </div>
             </div>
 
-            {/* Content Section - Wider (8 columns) */}
-            <div className="md:col-span-8 space-y-8">
+            {/* Content Section - Right Side */}
+            <div className="space-y-10">
               <div>
                 <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">{product.tagline}</span>
-                <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">{product.name}</h1>
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
+                <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-6 leading-tight">{product.name}</h1>
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
                   {product.description}
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Ingredients Column */}
-                <div className="bg-secondary/30 rounded-2xl p-6 h-full">
-                  <h3 className="font-serif font-bold text-xl mb-4 flex items-center gap-2">
-                    <Leaf className="w-4 h-4 text-green-600" />
+              <div className="flex flex-col gap-10">
+                {/* Ingredients Section - Full Width */}
+                <div className="bg-secondary/30 rounded-3xl p-8 w-full">
+                  <h3 className="font-serif font-bold text-2xl mb-6 flex items-center gap-3">
+                    <Leaf className="w-5 h-5 text-green-600" />
                     Ingredients
                   </h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {product.ingredients.map((ing) => (
-                      <span key={ing} className="px-3 py-1.5 bg-background rounded-full text-sm text-foreground font-medium border border-border shadow-sm">
+                      <span key={ing} className="px-4 py-2 bg-background rounded-full text-base text-foreground font-medium border border-border shadow-sm">
                         {ing}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                {/* Nutrition Column */}
-                <div className="border border-border rounded-2xl p-6 h-full">
-                  <h3 className="font-serif font-bold text-xl mb-4">Nutrition Facts</h3>
-                  <div className="grid grid-cols-3 gap-x-4 gap-y-4">
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Energy</span>
-                      <span className="text-lg font-bold text-foreground">{product.nutrition.kcal} kcal</span>
+                {/* Nutrition Section - Full Width */}
+                <div className="border border-border rounded-3xl p-8 w-full">
+                  <h3 className="font-serif font-bold text-2xl mb-6">Nutrition Facts</h3>
+                  <div className="grid grid-cols-3 gap-x-8 gap-y-8">
+                    <div className="space-y-1">
+                      <span className="text-muted-foreground text-sm block uppercase tracking-wide">Energy</span>
+                      <span className="text-2xl font-bold text-foreground">{product.nutrition.kcal} kcal</span>
                     </div>
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Protein</span>
-                      <span className="text-lg font-bold text-foreground">{product.nutrition.protein}</span>
+                    <div className="space-y-1">
+                      <span className="text-muted-foreground text-sm block uppercase tracking-wide">Protein</span>
+                      <span className="text-2xl font-bold text-foreground">{product.nutrition.protein}</span>
                     </div>
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Fiber</span>
-                      <span className="text-lg font-bold text-foreground">{product.nutrition.fiber}</span>
+                    <div className="space-y-1">
+                      <span className="text-muted-foreground text-sm block uppercase tracking-wide">Fiber</span>
+                      <span className="text-2xl font-bold text-foreground">{product.nutrition.fiber}</span>
                     </div>
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Fat</span>
-                      <span className="text-lg font-bold text-foreground">{product.nutrition.fat}</span>
+                    <div className="space-y-1">
+                      <span className="text-muted-foreground text-sm block uppercase tracking-wide">Fat</span>
+                      <span className="text-2xl font-bold text-foreground">{product.nutrition.fat}</span>
                     </div>
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Carbs</span>
-                      <span className="text-lg font-bold text-foreground">{product.nutrition.carbs}</span>
+                    <div className="space-y-1">
+                      <span className="text-muted-foreground text-sm block uppercase tracking-wide">Carbs</span>
+                      <span className="text-2xl font-bold text-foreground">{product.nutrition.carbs}</span>
                     </div>
-                    <div className="space-y-0.5">
-                      <span className="text-muted-foreground text-xs block uppercase tracking-wide">Sugar*</span>
-                      <span className="text-lg font-bold text-foreground">{product.nutrition.sugar}</span>
+                    <div className="space-y-1">
+                      <span className="text-muted-foreground text-sm block uppercase tracking-wide">Sugar*</span>
+                      <span className="text-2xl font-bold text-foreground">{product.nutrition.sugar}</span>
                     </div>
                   </div>
-                  <p className="text-[10px] text-muted-foreground mt-4 text-right">*Natural sugar from dates</p>
+                  <p className="text-xs text-muted-foreground mt-6 text-right">*Natural sugar from dates</p>
                 </div>
               </div>
 
-              <OrderModal defaultProduct={product.id}>
-                <button className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 transform hover:-translate-y-0.5 cursor-pointer">
-                  Order {product.name} Box
-                </button>
-              </OrderModal>
+              {/* Order button removed as requested */}
             </div>
           </div>
         </div>
