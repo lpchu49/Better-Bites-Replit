@@ -15,12 +15,12 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 text-center md:text-left">
+      <div className="container mx-auto px-6 relative z-10 flex justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-2xl mx-auto md:mx-0 bg-background/60 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-white/20 shadow-xl"
+          className="max-w-2xl bg-background/60 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-white/20 shadow-xl text-center"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-6 tracking-wide uppercase">
             100% Natural Ingredients
@@ -31,7 +31,7 @@ export function Hero() {
           <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
             Handcrafted energy balls made from dates, nuts, and love. No artificial nonsense. Just real food that makes you feel good.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#products"
               className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium text-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 transform hover:-translate-y-0.5"

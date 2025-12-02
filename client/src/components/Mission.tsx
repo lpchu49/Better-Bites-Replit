@@ -27,7 +27,7 @@ export function Mission() {
             </h2>
             <div className="prose prose-lg text-muted-foreground">
               <p className="mb-6">
-                Our mission is simple: to create snacks that are as honest as they are delicious. We started Nourish because we were tired of "health foods" filled with unpronounceable ingredients and hidden syrups.
+                Our mission is simple: to create snacks that are as honest as they are delicious. We started Better Bites because we were tired of "health foods" filled with unpronounceable ingredients and hidden syrups.
               </p>
               <p className="mb-6">
                 We believe that nature provides everything we need to feel energized and vibrant. That's why our energy balls are made from just a handful of raw, whole ingredients.
@@ -54,10 +54,6 @@ export function Mission() {
             transition={{ duration: 0.8 }}
             className="relative h-[600px] rounded-[2rem] overflow-hidden bg-stone-200"
           >
-             {/* We can use a color block or a placeholder if we ran out of images, 
-                 but let's reuse the hero image zoomed in or just a nice color block with typography 
-                 since we want to save image generation budget if possible, 
-                 BUT a lifestyle image would be better. Let's use a nice CSS composition. */}
              <div className="absolute inset-0 bg-stone-900 p-12 flex flex-col justify-between">
                 <div className="text-white/20 text-9xl font-serif font-black leading-none select-none">
                   REAL<br/>FOOD
@@ -67,7 +63,7 @@ export function Mission() {
                   <blockquote className="text-2xl md:text-3xl text-white font-serif italic">
                     "We don't just sell snacks; we advocate for a return to real, whole food."
                   </blockquote>
-                  <cite className="text-white/60 not-italic block">— The Nourish Team</cite>
+                  <cite className="text-white/60 not-italic block">— The Better Bites Team</cite>
                 </div>
              </div>
           </motion.div>
