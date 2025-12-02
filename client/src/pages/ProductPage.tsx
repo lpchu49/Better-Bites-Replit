@@ -1,4 +1,4 @@
-import { useRoute, Link } from "wouter";
+import { useRoute } from "wouter";
 import { products } from "@/components/ProductShowcase";
 import { Navbar } from "@/components/Navbar";
 import { Contact } from "@/components/Contact";
@@ -31,11 +31,12 @@ export default function ProductPage() {
       
       <main className="pt-28 pb-16">
         <div className="container mx-auto px-6 max-w-5xl">
-          <Link href="/#products">
-            <a className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6 text-sm font-medium">
-              <ArrowLeft className="w-3 h-3" /> {t('productPage.backToProducts')}
-            </a>
-          </Link>
+          <a 
+            href="/#products"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6 text-sm font-medium"
+          >
+            <ArrowLeft className="w-3 h-3" /> {t('productPage.backToProducts')}
+          </a>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             {/* Left Column - Product Name + Image */}
