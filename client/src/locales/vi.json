@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Trang Chủ",
+    "ourProducts": "Sản Phẩm",
+    "aboutUs": "Về Chúng Tôi",
+    "orderNow": "Đặt Hàng"
+  },
+  "hero": {
+    "badge": "100% Nguyên Liệu Tự Nhiên",
+    "title": "Đồ ăn vặt lành mạnh từng có vị như thế này.",
+    "description": "Bánh năng lượng thủ công làm từ chà là, hạt và tình yêu. Không chất nhân tạo. Chỉ có thực phẩm thật khiến bạn cảm thấy tuyệt vời.",
+    "exploreFlavors": "Khám Phá Hương Vị",
+    "ourStory": "Câu Chuyện"
+  },
+  "products": {
+    "title": "Đơn Giản. Thật. Ngon.",
+    "subtitle": "Bốn hương vị đặc trưng, một triết lý đơn giản: thực phẩm thật ngon hơn.",
+    "ingredients": "Thành Phần",
+    "kcalPerBall": "kcal / viên",
+    "classic": {
+      "name": "Classic",
+      "tagline": "Hoàn hảo đơn giản",
+      "shortDescription": "Chà là ngọt, hạnh nhân giòn và dừa nhiệt đới.",
+      "description": "Viên chà là đặc trưng đã bắt đầu tất cả. Sự kết hợp hài hòa của chà là ngọt, hạnh nhân giòn và dừa nhiệt đới. Thuần khiết, đơn giản và ngon tuyệt."
+    },
+    "lux": {
+      "name": "Lux",
+      "tagline": "Đậm đà sang trọng",
+      "shortDescription": "Trải nghiệm như brownie không cảm giác tội lỗi. Đậm, đen và sang trọng.",
+      "description": "Dành cho những người yêu sô cô la. Chà là cao cấp trộn với hạnh nhân, óc chó và bột cacao đậm, điểm xuyết socola đen 65%. Xa xỉ nhưng lành mạnh."
+    },
+    "zen": {
+      "name": "Zen",
+      "tagline": "Bình yên & cân bằng",
+      "shortDescription": "Năng lượng trà xanh tươi sáng cho sự tập trung và tĩnh lặng.",
+      "description": "Tìm khoảnh khắc bình yên với hương vị độc đáo này. Bột trà xanh matcha hòa quyện với hạt dẻ cười, chà là và hạt điều, hoàn thiện với một chút dừa. Món ăn vặt chánh niệm."
+    },
+    "zesty": {
+      "name": "Zesty",
+      "tagline": "Tươi sáng & sảng khoái",
+      "shortDescription": "Ánh nắng rực rỡ với chanh tươi và nho khô ngọt.",
+      "description": "Biến tấu tươi mới từ công thức cổ điển. Chà là ngọt và hạt điều béo gặp gỡ chanh chua và nho khô, tất cả bọc trong dừa mềm mại. Một tia nắng trong từng miếng."
+    },
+    "ingredientNames": {
+      "dates": "Chà Là",
+      "almonds": "Hạnh Nhân",
+      "desiccatedCoconut": "Dừa Sấy Khô",
+      "walnuts": "Óc Chó",
+      "darkChocolate": "Socola Đen 65%",
+      "cocoa": "Cacao",
+      "cashews": "Hạt Điều",
+      "pistachios": "Hạt Dẻ Cười",
+      "matcha": "Matcha",
+      "lemon": "Chanh",
+      "raisins": "Nho Khô"
+    }
+  },
+  "productPage": {
+    "backToProducts": "Quay Lại Sản Phẩm",
+    "nutritionFacts": "Thông Tin Dinh Dưỡng",
+    "servingSize": "Khẩu Phần",
+    "servingSizeValue": "1 viên (10g)",
+    "calories": "Năng Lượng",
+    "totalCarbs": "Tổng Carbohydrate",
+    "fiber": "Chất Xơ",
+    "sugar": "Đường*",
+    "protein": "Protein",
+    "fat": "Chất Béo",
+    "sugarNote": "*Đường tự nhiên từ chà là"
+  },
+  "mission": {
+    "title": "Thức ăn nuôi dưỡng tâm hồn.",
+    "paragraph1": "Sứ mệnh của chúng tôi rất đơn giản: tạo ra những món ăn vặt chân thật như chính hương vị ngon của chúng.",
+    "paragraph2": "Chúng tôi tin rằng thiên nhiên cung cấp mọi thứ chúng ta cần để cảm thấy tràn đầy năng lượng và sức sống, không cần những thành phần khó đọc và siro ẩn giấu. Đó là lý do viên năng lượng của chúng tôi chỉ được làm từ một vài nguyên liệu thô, nguyên chất, dễ nhận biết.",
+    "paragraph3": "Mỗi miếng cắn là lời hứa của chúng tôi về chất lượng, bền vững và hương vị thuần khiết, đơn giản.",
+    "benefits": {
+      "noAddedSugars": "Không Đường Thêm",
+      "glutenFree": "Không Gluten",
+      "vegan": "Thuần Chay",
+      "preservativeFree": "Không Chất Bảo Quản"
+    },
+    "quote": "\"Chúng tôi không chỉ bán đồ ăn vặt; chúng tôi ủng hộ việc quay về với thực phẩm thật, nguyên chất.\"",
+    "quoteAuthor": "— Đội Ngũ Better Bites"
+  },
+  "about": {
+    "title": "Câu Chuyện Của Chúng Tôi",
+    "subtitle": "Niềm đam mê với những món ăn vặt lành mạnh, ngon miệng được làm với tình yêu và nguyên liệu thật, đơn giản.",
+    "originTitle": "Được Tạo Ra Với Mục Đích",
+    "originP1": "Better Bites bắt đầu trong một căn bếp nhỏ với một sự thất vọng đơn giản: tại sao hầu hết các món ăn vặt \"lành mạnh\" lại chứa đầy những thành phần mà chúng ta không thể phát âm được?",
+    "originP2": "Chúng tôi mệt mỏi với việc đọc nhãn đầy chất ngọt nhân tạo, chất bảo quản và phụ gia bí ẩn. Chúng tôi khao khát điều gì đó thật — một món ăn vặt chân thật như chính hương vị ngon của nó.",
+    "originP3": "Vì vậy chúng tôi bắt đầu thử nghiệm. Chà là trở thành chất tạo ngọt tự nhiên. Hạnh nhân, hạt điều và óc chó thêm độ giòn và dinh dưỡng. Dừa, cacao và matcha mang lại hương vị và sự đa dạng. Không cần nấu nướng — chỉ là nguyên liệu thô, thuần khiết được trộn cùng nhau với sự chăm sóc.",
+    "missionTitle": "Sứ Mệnh",
+    "missionText": "Tạo ra những món ăn vặt sạch, lành mạnh và thật khiến bạn cảm thấy tốt. Chúng tôi ở đây để chứng minh rằng ăn uống lành mạnh không có nghĩa là hy sinh hương vị — và sự minh bạch trong thành phần nên là tiêu chuẩn, không phải ngoại lệ.",
+    "visionTitle": "Tầm Nhìn",
+    "visionText": "Một thế giới nơi mọi người đều có thể tiếp cận những món ăn vặt tiếp năng lượng cho ngày mới mà không cần thỏa hiệp. Chúng tôi hình dung một tương lai nơi việc đọc nhãn thành phần mang lại niềm vui, không phải sự bối rối — và nơi \"lành mạnh\" đơn giản có nghĩa là \"thật.\"",
+    "whyTitle": "Tại Sao Chúng Tôi Ở Đây",
+    "whySubtitle": "Mỗi miếng cắn chúng tôi tạo ra đều được hướng dẫn bởi những niềm tin cốt lõi này.",
+    "realIngredients": "Nguyên Liệu Thật",
+    "realIngredientsDesc": "Nếu bạn không nhận ra nó, chúng tôi không sử dụng. Đơn giản vậy thôi.",
+    "madeWithLove": "Làm Với Tình Yêu",
+    "madeWithLoveDesc": "Mỗi mẻ đều được làm thủ công với sự chú ý và chăm sóc.",
+    "communityFirst": "Cộng Đồng Là Trên Hết",
+    "communityFirstDesc": "Chúng tôi đang xây dựng nhiều hơn một thương hiệu — chúng tôi đang xây dựng một phong trào."
+  },
+  "contact": {
+    "brandDescription": "Bánh năng lượng thủ công làm từ nguyên liệu nguyên chất. Tiếp năng lượng cho ngày mới, tự nhiên.",
+    "quickLinks": "Liên Kết Nhanh",
+    "getInTouch": "Liên Hệ",
+    "copyright": "© 2025 Better Bites. Đã đăng ký bản quyền.",
+    "privacyPolicy": "Chính Sách Bảo Mật",
+    "termsOfService": "Điều Khoản Dịch Vụ"
+  },
+  "order": {
+    "title": "Đặt Hàng",
+    "description": "Điền vào biểu mẫu bên dưới và chúng tôi sẽ liên hệ lại với thông tin thanh toán và giao hàng.",
+    "name": "Họ Tên",
+    "namePlaceholder": "Nguyễn Văn A",
+    "nameRequired": "Vui lòng nhập họ tên",
+    "phone": "Điện Thoại",
+    "phonePlaceholder": "0123-456-789",
+    "email": "Email",
+    "emailPlaceholder": "email@example.com",
+    "emailRequired": "Vui lòng nhập email",
+    "yourOrder": "Đơn Hàng Của Bạn",
+    "orderPlaceholder": "Số lượng, dị ứng, hoặc địa chỉ giao hàng...",
+    "cancel": "Hủy",
+    "sendRequest": "Gửi Yêu Cầu",
+    "sending": "Đang gửi...",
+    "successTitle": "Đã Gửi Yêu Cầu Đặt Hàng!",
+    "successDescription": "Chúng tôi sẽ liên hệ sớm để xác nhận chi tiết đơn hàng của bạn.",
+    "errorTitle": "Lỗi",
+    "errorDescription": "Không thể gửi đơn hàng. Vui lòng thử lại."
+  }
+}

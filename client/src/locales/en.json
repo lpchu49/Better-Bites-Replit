@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "ourProducts": "Our Products",
+    "aboutUs": "About Us",
+    "orderNow": "Order Now"
+  },
+  "hero": {
+    "badge": "100% Natural Ingredients",
+    "title": "Wholesome snacks used to taste like this.",
+    "description": "Handcrafted energy balls made from dates, nuts, and love. No artificial nonsense. Just real food that makes you feel good.",
+    "exploreFlavors": "Explore Flavors",
+    "ourStory": "Our Story"
+  },
+  "products": {
+    "title": "Simple. Real. Delicious.",
+    "subtitle": "Four distinct flavors, one simple philosophy: real food tastes better.",
+    "ingredients": "Ingredients",
+    "kcalPerBall": "kcal / ball",
+    "classic": {
+      "name": "Classic",
+      "tagline": "Simply perfect",
+      "shortDescription": "Sweet dates, crunchy almonds, and tropical coconut.",
+      "description": "Our signature date ball that started it all. A harmonious blend of sweet dates, crunchy almonds, and tropical coconut. Pure, simple, and absolutely delicious."
+    },
+    "lux": {
+      "name": "Lux",
+      "tagline": "Indulgently rich",
+      "shortDescription": "A brownie-like experience without the guilt. Rich, dark, and luxurious.",
+      "description": "For the chocolate lovers. Premium dates blended with almond, walnuts, and rich cocoa powder, studded with 65% dark chocolate chips. Decadent, yet wholesome."
+    },
+    "zen": {
+      "name": "Zen",
+      "tagline": "Calm & balanced",
+      "shortDescription": "Vibrant green tea energy for focused calm and clarity.",
+      "description": "Find your moment of peace with this unique blend. Earthy matcha green tea powder harmonizes with pistachios, dates, and cashews, finished with a touch of coconut. A mindful treat."
+    },
+    "zesty": {
+      "name": "Zesty",
+      "tagline": "Bright & refreshing",
+      "shortDescription": "A bright burst of sunshine with fresh lemon and sweet raisins.",
+      "description": "A vibrant twist on our classic recipe. Sweet dates and creamy cashews meet tangy lemon and raisins, all wrapped in delicate coconut. A burst of sunshine in every bite."
+    },
+    "ingredientNames": {
+      "dates": "Dates",
+      "almonds": "Almonds",
+      "desiccatedCoconut": "Desiccated Coconut",
+      "walnuts": "Walnuts",
+      "darkChocolate": "Dark Chocolate 65%",
+      "cocoa": "Cocoa",
+      "cashews": "Cashews",
+      "pistachios": "Pistachios",
+      "matcha": "Matcha",
+      "lemon": "Lemon",
+      "raisins": "Raisins"
+    }
+  },
+  "productPage": {
+    "backToProducts": "Back to Products",
+    "nutritionFacts": "Nutrition Facts",
+    "servingSize": "Serving Size",
+    "servingSizeValue": "1 ball (10g)",
+    "calories": "Calories",
+    "totalCarbs": "Total Carbohydrates",
+    "fiber": "Fiber",
+    "sugar": "Sugar*",
+    "protein": "Protein",
+    "fat": "Fat",
+    "sugarNote": "*Natural sugar from dates"
+  },
+  "mission": {
+    "title": "Food that fuels your soul.",
+    "paragraph1": "Our mission is simple: to create snacks that are as honest as they are delicious.",
+    "paragraph2": "We believe that nature provides everything we need to feel energized and vibrant, without unpronouncable ingredients and hidden syrups. That's why our energy balls are made from just a handful of raw, whole, recognizable ingredients.",
+    "paragraph3": "Every bite is our promise of quality, sustainability, and pure, simple flavor.",
+    "benefits": {
+      "noAddedSugars": "No Added Sugars",
+      "glutenFree": "Gluten Free",
+      "vegan": "Vegan",
+      "preservativeFree": "Preservative Free"
+    },
+    "quote": "\"We don't just sell snacks; we advocate for a return to real, whole food.\"",
+    "quoteAuthor": "— The Better Bites Team"
+  },
+  "about": {
+    "title": "Our Story",
+    "subtitle": "A passion for wholesome, delicious snacks made with love and real, simple ingredients.",
+    "originTitle": "Crafted with Purpose",
+    "originP1": "Better Bites started in a small kitchen with a simple frustration: why are most \"healthy\" snacks filled with ingredients we can't pronounce?",
+    "originP2": "We were tired of reading labels packed with artificial sweeteners, preservatives, and mystery additives. We craved something real — a snack that was as honest as it was delicious.",
+    "originP3": "So we started experimenting. Dates became our natural sweetener. Almonds, cashews, and walnuts added crunch and nutrition. Coconut, cacao, and matcha brought flavor and variety. No cooking required — just pure, raw ingredients blended together with care.",
+    "missionTitle": "Our Mission",
+    "missionText": "To create clean, wholesome, and real snacks that make you feel good. We're here to prove that healthy eating doesn't mean sacrificing taste — and that transparency in ingredients should be the norm, not the exception.",
+    "visionTitle": "Our Vision",
+    "visionText": "A world where everyone has access to snacks that fuel their day without compromise. We envision a future where reading ingredient labels brings joy, not confusion — and where \"healthy\" simply means \"real.\"",
+    "whyTitle": "Why We're Here",
+    "whySubtitle": "Every bite we create is guided by these core beliefs.",
+    "realIngredients": "Real Ingredients",
+    "realIngredientsDesc": "If you can't recognize it, we don't use it. Simple as that.",
+    "madeWithLove": "Made With Love",
+    "madeWithLoveDesc": "Every batch is handcrafted with attention and care.",
+    "communityFirst": "Community First",
+    "communityFirstDesc": "We're building more than a brand — we're building a movement."
+  },
+  "contact": {
+    "brandDescription": "Handcrafted energy balls made from whole ingredients. Fueling your day, naturally.",
+    "quickLinks": "Quick Links",
+    "getInTouch": "Get in Touch",
+    "copyright": "© 2025 Better Bites. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "order": {
+    "title": "Place an Order",
+    "description": "Fill out the form below and we'll get back to you with payment and shipping details.",
+    "name": "Name",
+    "namePlaceholder": "Jane Doe",
+    "nameRequired": "Name is required",
+    "phone": "Phone",
+    "phonePlaceholder": "(555) 123-4567",
+    "email": "Email",
+    "emailPlaceholder": "jane@example.com",
+    "emailRequired": "Email is required",
+    "yourOrder": "Your Order",
+    "orderPlaceholder": "Quantity, allergies, or shipping address...",
+    "cancel": "Cancel",
+    "sendRequest": "Send Request",
+    "sending": "Sending...",
+    "successTitle": "Order Request Sent!",
+    "successDescription": "We'll be in touch shortly to confirm your order details.",
+    "errorTitle": "Error",
+    "errorDescription": "Failed to submit order. Please try again."
+  }
+}
