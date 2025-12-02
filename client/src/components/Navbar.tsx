@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Menu, X, ShoppingBag } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -7,10 +7,10 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { name: "Our Products", href: "#products" },
-    { name: "Ingredients", href: "#ingredients" },
-    { name: "Mission", href: "#mission" },
-    { name: "Contact", href: "#contact" },
+    { name: "Our Products", href: "/#products" },
+    { name: "Ingredients", href: "/#ingredients" },
+    { name: "Mission", href: "/#mission" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -18,20 +18,18 @@ export function Navbar() {
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/">
           <a className="text-2xl font-serif font-bold tracking-tighter text-primary">
-            Nourish.
+            Better Bites.
           </a>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-            >
-              {link.name}
-            </a>
+            <Link key={link.name} href={link.href}>
+              <a className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">
+                {link.name}
+              </a>
+            </Link>
           ))}
           <button className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors shadow-sm">
             Order Now
@@ -58,14 +56,14 @@ export function Navbar() {
           >
             <div className="flex flex-col p-6 gap-4">
               {links.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-foreground/90"
-                >
-                  {link.name}
-                </a>
+                <Link key={link.name} href={link.href}>
+                  <a
+                    onClick={() => setIsOpen(false)}
+                    className="text-lg font-medium text-foreground/90"
+                  >
+                    {link.name}
+                  </a>
+                </Link>
               ))}
               <button className="bg-primary text-primary-foreground w-full py-3 rounded-full font-medium mt-2">
                 Order Now

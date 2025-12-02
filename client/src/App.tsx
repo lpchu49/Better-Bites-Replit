@@ -4,14 +4,32 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
+import ProductPage from "@/pages/ProductPage";
 import NotFound from "@/pages/not-found";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
+
+// Scroll to top on route change component
+function ScrollToTop() {
+  const [pathname] = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+}
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/product/:id" component={ProductPage} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 

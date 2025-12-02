@@ -1,39 +1,83 @@
 import { motion } from "framer-motion";
-import { Leaf, Check } from "lucide-react";
-import coconutImg from "@assets/generated_images/coconut_date_ball_on_ceramic_plate.png";
-import cacaoImg from "@assets/generated_images/cacao_dusted_date_ball.png";
+import { Leaf } from "lucide-react";
+import { Link } from "wouter";
+import coconutImg from "@assets/generated_images/classic_date_almond_coconut_ball.png";
+import chocolateImg from "@assets/generated_images/lux_chocolate_date_ball.png";
+import lemonImg from "@assets/generated_images/zesty_lemon_date_ball.png";
 import pistachioImg from "@assets/generated_images/pistachio_coated_date_ball.png";
 
-const products = [
+export const products = [
   {
-    id: "coconut",
-    name: "Coconut Bliss",
-    tagline: "Tropical & Creamy",
-    description: "Sweet medjool dates blended with creamy cashews and rolled in organic desiccated coconut.",
+    id: "classic",
+    name: "Classic",
+    tagline: "The Original",
+    short_description: "The ball that started it all. Sweet dates, crunchy almonds, and tropical coconut.",
+    description: "Our Classic energy ball is where it all began. A perfect harmony of sweet Medjool dates, crunchy roasted almonds, and aromatic desiccated coconut. It's simple, honest, and incredibly satisfying.",
     image: coconutImg,
-    ingredients: ["Medjool Dates", "Cashews", "Coconut", "Vanilla Bean"],
-    nutrition: { kcal: 120, protein: "3g", fiber: "2g" },
+    ingredients: ["Medjool Dates", "Almonds", "Desiccated Coconut"],
+    nutrition: {
+      kcal: 120,
+      protein: "3g",
+      fiber: "2g",
+      fat: "6g",
+      carbs: "18g",
+      sugar: "14g"
+    },
     color: "bg-[#F5F5F0]"
   },
   {
-    id: "cacao",
-    name: "Cacao Crave",
-    tagline: "Rich & Indulgent",
-    description: "A brownie-like experience without the guilt. Raw cacao powder, walnuts, and a pinch of sea salt.",
-    image: cacaoImg,
-    ingredients: ["Medjool Dates", "Walnuts", "Raw Cacao", "Sea Salt"],
-    nutrition: { kcal: 115, protein: "4g", fiber: "3g" },
+    id: "lux",
+    name: "Lux",
+    tagline: "Decadent Dark Chocolate",
+    short_description: "A brownie-like experience without the guilt. Rich, dark, and luxurious.",
+    description: "Indulge your chocolate cravings with Lux. We blend dates, almonds, and walnuts with premium 65% dark chocolate and cocoa powder, then roll it all in a dusting of cocoa. It's rich, fudgy, and completely guilt-free.",
+    image: chocolateImg,
+    ingredients: ["Medjool Dates", "Almonds", "Walnuts", "65% Dark Chocolate", "Cocoa Powder"],
+    nutrition: {
+      kcal: 135,
+      protein: "4g",
+      fiber: "3g",
+      fat: "7g",
+      carbs: "16g",
+      sugar: "12g"
+    },
     color: "bg-[#F0EAE5]"
   },
   {
-    id: "pistachio",
-    name: "Pistachio Power",
-    tagline: "Nutty & Earthy",
-    description: "Vibrant pistachios and almonds with a hint of matcha green tea for a gentle energy boost.",
+    id: "zen",
+    name: "Zen",
+    tagline: "Matcha Pistachio Calm",
+    short_description: "Vibrant green tea energy for focused calm and clarity.",
+    description: "Find your center with Zen. Creamy cashews and pistachios blended with dates and coconut, finished with a vibrant coating of premium matcha green tea powder. Earthy, nutty, and perfectly balanced.",
     image: pistachioImg,
-    ingredients: ["Medjool Dates", "Almonds", "Pistachios", "Matcha"],
-    nutrition: { kcal: 125, protein: "5g", fiber: "2.5g" },
+    ingredients: ["Medjool Dates", "Cashews", "Pistachios", "Desiccated Coconut", "Matcha Powder"],
+    nutrition: {
+      kcal: 125,
+      protein: "5g",
+      fiber: "2.5g",
+      fat: "6.5g",
+      carbs: "15g",
+      sugar: "11g"
+    },
     color: "bg-[#EEF2E8]"
+  },
+  {
+    id: "zesty",
+    name: "Zesty",
+    tagline: "Lemon Sunburst",
+    short_description: "A bright burst of sunshine with fresh lemon and sweet raisins.",
+    description: "Wake up your tastebuds with Zesty. We mix dates and creamy cashews with fresh lemon juice, lemon zest, and sweet raisins, then roll it in coconut. It tastes like a slice of lemon tart, but wholesome.",
+    image: lemonImg,
+    ingredients: ["Medjool Dates", "Cashews", "Lemon Juice", "Lemon Zest", "Raisins", "Desiccated Coconut"],
+    nutrition: {
+      kcal: 118,
+      protein: "3g",
+      fiber: "2g",
+      fat: "5g",
+      carbs: "19g",
+      sugar: "15g"
+    },
+    color: "bg-[#FFFBEB]"
   }
 ];
 
@@ -46,59 +90,40 @@ export function ProductShowcase() {
             Simple. Real. Delicious.
           </h2>
           <p className="text-muted-foreground text-lg">
-            We believe in transparency. That's why our ingredients list is short, sweet, and recognizable.
+            Four distinct flavors, one simple philosophy: real food tastes better.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
-            <motion.div
-              key={product.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <div className={`aspect-square rounded-3xl overflow-hidden mb-8 relative ${product.color}`}>
-                <motion.img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover mix-blend-overlay opacity-90 md:mix-blend-normal md:opacity-100 transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Nutrition Badge */}
-                <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-sm text-xs font-medium text-foreground">
-                  {product.nutrition.kcal} kcal / ball
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-2xl font-serif font-bold text-foreground">{product.name}</h3>
-                    <p className="text-primary font-medium text-sm uppercase tracking-wide">{product.tagline}</p>
+            <Link key={product.id} href={`/product/${product.id}`}>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <div className={`aspect-square rounded-3xl overflow-hidden mb-6 relative ${product.color}`}>
+                  <motion.img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover mix-blend-overlay opacity-90 md:mix-blend-normal md:opacity-100 transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-sm text-xs font-medium text-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                    View Details
                   </div>
                 </div>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  {product.description}
-                </p>
 
-                <div className="pt-4 border-t border-border">
-                  <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                    <Leaf className="w-4 h-4 text-green-600" />
-                    Ingredients
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {product.ingredients.map((ing) => (
-                      <span key={ing} className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium">
-                        {ing}
-                      </span>
-                    ))}
-                  </div>
+                <div className="space-y-2 text-center md:text-left">
+                  <h3 className="text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">{product.name}</h3>
+                  <p className="text-primary font-medium text-xs uppercase tracking-wide">{product.tagline}</p>
+                  <p className="text-muted-foreground text-sm line-clamp-2">
+                    {product.short_description}
+                  </p>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

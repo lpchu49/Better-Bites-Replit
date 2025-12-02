@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 
 export function Contact() {
@@ -6,7 +7,7 @@ export function Contact() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
-            <h3 className="text-2xl font-serif font-bold text-white mb-6">Nourish.</h3>
+            <h3 className="text-2xl font-serif font-bold text-white mb-6">Better Bites.</h3>
             <p className="text-stone-400 mb-6 max-w-xs">
               Handcrafted energy balls made from whole ingredients. Fueling your day, naturally.
             </p>
@@ -39,7 +40,7 @@ export function Contact() {
             <ul className="space-y-4 text-stone-400">
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>hello@nourish-snacks.com</span>
+                <span>hello@betterbites.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary" />
@@ -54,7 +55,7 @@ export function Contact() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-stone-500">
-          <p>&copy; 2024 Nourish Snacks. All rights reserved.</p>
+          <p>&copy; 2024 Better Bites. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
