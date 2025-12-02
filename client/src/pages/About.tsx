@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
       <Navbar />
-      
+
       <main className="pt-28 pb-20">
         {/* Hero Section */}
         <section className="container mx-auto px-6 mb-20">
@@ -21,7 +21,8 @@ export default function About() {
               Our Story
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              We believe that snacking should nourish both body and soul. That's why we created Better Bites — wholesome energy balls crafted with love and real ingredients.
+              A passion for wholesome, delicious snacks made with love and real,
+              simple ingredients.
             </p>
           </motion.div>
         </section>
@@ -37,17 +38,26 @@ export default function About() {
               className="bg-secondary/20 rounded-3xl p-8 md:p-12"
             >
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-6">
-                Where We Came From
+                Crafted with Purpose
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Better Bites started in a small kitchen with a simple frustration: why are most "healthy" snacks filled with ingredients we can't pronounce?
+                  Better Bites started in a small kitchen with a simple
+                  frustration: why are most "healthy" snacks filled with
+                  ingredients we can't pronounce?
                 </p>
                 <p>
-                  We were tired of reading labels packed with artificial sweeteners, preservatives, and mystery additives. We craved something real — a snack that was as honest as it was delicious.
+                  We were tired of reading labels packed with artificial
+                  sweeteners, preservatives, and mystery additives. We craved
+                  something real — a snack that was as honest as it was
+                  delicious.
                 </p>
                 <p>
-                  So we started experimenting. Medjool dates became our natural sweetener. Almonds, cashews, and walnuts added crunch and nutrition. Coconut, cacao, and matcha brought flavor and variety. No cooking required — just pure, raw ingredients blended together with care.
+                  So we started experimenting. Dates became our natural
+                  sweetener. Almonds, cashews, and walnuts added crunch and
+                  nutrition. Coconut, cacao, and matcha brought flavor and
+                  variety. No cooking required — just pure, raw ingredients
+                  blended together with care.
                 </p>
               </div>
             </motion.div>
@@ -67,9 +77,14 @@ export default function About() {
               <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-6">
                 <Heart className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-serif font-bold text-foreground mb-4">Our Mission</h3>
+              <h3 className="text-xl font-serif font-bold text-foreground mb-4">
+                Our Mission
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                To create clean, wholesome, and real snacks that make you feel good. We're here to prove that healthy eating doesn't mean sacrificing taste — and that transparency in ingredients should be the norm, not the exception.
+                To create clean, wholesome, and real snacks that make you feel
+                good. We're here to prove that healthy eating doesn't mean
+                sacrificing taste — and that transparency in ingredients should
+                be the norm, not the exception.
               </p>
             </motion.div>
 
@@ -83,9 +98,14 @@ export default function About() {
               <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-6">
                 <Sparkles className="w-6 h-6 text-secondary-foreground" />
               </div>
-              <h3 className="text-xl font-serif font-bold text-foreground mb-4">Our Vision</h3>
+              <h3 className="text-xl font-serif font-bold text-foreground mb-4">
+                Our Vision
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                A world where everyone has access to snacks that fuel their day without compromise. We envision a future where reading ingredient labels brings joy, not confusion — and where "healthy" simply means "real."
+                A world where everyone has access to snacks that fuel their day
+                without compromise. We envision a future where reading
+                ingredient labels brings joy, not confusion — and where
+                "healthy" simply means "real."
               </p>
             </motion.div>
           </div>
@@ -120,7 +140,9 @@ export default function About() {
                 <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Leaf className="w-7 h-7 text-green-600" />
                 </div>
-                <h4 className="font-bold text-foreground mb-2">Real Ingredients</h4>
+                <h4 className="font-bold text-foreground mb-2">
+                  Real Ingredients
+                </h4>
                 <p className="text-sm text-muted-foreground">
                   If you can't recognize it, we don't use it. Simple as that.
                 </p>
@@ -136,7 +158,9 @@ export default function About() {
                 <div className="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Heart className="w-7 h-7 text-amber-600" />
                 </div>
-                <h4 className="font-bold text-foreground mb-2">Made With Love</h4>
+                <h4 className="font-bold text-foreground mb-2">
+                  Made With Love
+                </h4>
                 <p className="text-sm text-muted-foreground">
                   Every batch is handcrafted with attention and care.
                 </p>
@@ -152,7 +176,9 @@ export default function About() {
                 <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="w-7 h-7 text-blue-600" />
                 </div>
-                <h4 className="font-bold text-foreground mb-2">Community First</h4>
+                <h4 className="font-bold text-foreground mb-2">
+                  Community First
+                </h4>
                 <p className="text-sm text-muted-foreground">
                   We're building more than a brand — we're building a movement.
                 </p>
@@ -160,7 +186,6 @@ export default function About() {
             </div>
           </div>
         </section>
-
       </main>
 
       <Contact />
