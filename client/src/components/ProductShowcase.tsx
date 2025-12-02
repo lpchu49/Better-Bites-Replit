@@ -94,7 +94,7 @@ export function ProductShowcase() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {products.map((product, index) => (
             <Link key={product.id} href={`/product/${product.id}`}>
               <motion.div
@@ -102,25 +102,45 @@ export function ProductShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="group cursor-pointer"
+                className="group cursor-pointer h-full flex flex-col"
               >
-                <div className={`aspect-square rounded-3xl overflow-hidden mb-6 relative ${product.color}`}>
+                <div className={`aspect-square rounded-3xl overflow-hidden mb-8 relative ${product.color}`}>
                   <motion.img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover mix-blend-overlay opacity-90 md:mix-blend-normal md:opacity-100 transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-sm text-xs font-medium text-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-                    View Details
+                  {/* Nutrition Badge */}
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-sm text-xs font-medium text-foreground">
+                    {product.nutrition.kcal} kcal / ball
                   </div>
                 </div>
 
-                <div className="space-y-2 text-center md:text-left">
-                  <h3 className="text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">{product.name}</h3>
-                  <p className="text-primary font-medium text-xs uppercase tracking-wide">{product.tagline}</p>
-                  <p className="text-muted-foreground text-sm line-clamp-2">
+                <div className="space-y-4 flex-grow">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">{product.name}</h3>
+                      <p className="text-primary font-medium text-sm uppercase tracking-wide">{product.tagline}</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-muted-foreground leading-relaxed">
                     {product.short_description}
                   </p>
+
+                  <div className="pt-4 border-t border-border">
+                    <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
+                      <Leaf className="w-4 h-4 text-green-600" />
+                      Ingredients
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {product.ingredients.map((ing) => (
+                        <span key={ing} className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium">
+                          {ing}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </Link>
