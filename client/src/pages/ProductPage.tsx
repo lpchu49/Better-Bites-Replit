@@ -99,28 +99,17 @@ export default function ProductPage() {
                   <h3 className="font-serif font-bold text-lg mb-4">Nutrition Facts</h3>
                   
                   {/* Serving Size */}
-                  <div className="border-b border-border pb-3 mb-3">
-                    <span className="text-sm font-medium text-foreground">Serving size: 1 ball (10g)</span>
+                  <div className="flex justify-between items-center border-b border-border pb-3 mb-3">
+                    <span className="text-sm font-bold text-foreground">Serving Size</span>
+                    <span className="text-sm text-foreground">1 ball (10g)</span>
                   </div>
                   
                   {/* Nutrients List */}
                   <div className="space-y-2">
                     {/* Calories */}
                     <div className="flex justify-between items-center py-1 border-b border-border/50">
-                      <span className="text-sm font-medium text-foreground">Calories</span>
-                      <span className="text-sm font-bold text-foreground">{product.nutrition.kcal} kcal</span>
-                    </div>
-                    
-                    {/* Protein */}
-                    <div className="flex justify-between items-center py-1 border-b border-border/50">
-                      <span className="text-sm font-medium text-foreground">Protein</span>
-                      <span className="text-sm font-bold text-foreground">{product.nutrition.protein}</span>
-                    </div>
-                    
-                    {/* Fat */}
-                    <div className="flex justify-between items-center py-1 border-b border-border/50">
-                      <span className="text-sm font-medium text-foreground">Fat</span>
-                      <span className="text-sm font-bold text-foreground">{product.nutrition.fat}</span>
+                      <span className="text-base font-black text-foreground">Calories</span>
+                      <span className="text-base font-black text-foreground">{product.nutrition.kcal} kcal</span>
                     </div>
                     
                     {/* Total Carbohydrates */}
@@ -139,6 +128,18 @@ export default function ProductPage() {
                     <div className="flex justify-between items-center py-1 pl-4 border-l-2 border-muted border-b border-border/50">
                       <span className="text-sm text-muted-foreground">Sugar*</span>
                       <span className="text-sm font-medium text-foreground">{product.nutrition.sugar}</span>
+                    </div>
+                    
+                    {/* Protein */}
+                    <div className="flex justify-between items-center py-1 border-b border-border/50">
+                      <span className="text-sm font-medium text-foreground">Protein</span>
+                      <span className="text-sm font-bold text-foreground">{product.nutrition.protein}</span>
+                    </div>
+                    
+                    {/* Fat */}
+                    <div className="flex justify-between items-center py-1 border-b border-border/50">
+                      <span className="text-sm font-medium text-foreground">Fat</span>
+                      <span className="text-sm font-bold text-foreground">{product.nutrition.fat}</span>
                     </div>
                   </div>
                   
