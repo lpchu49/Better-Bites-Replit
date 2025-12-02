@@ -10,13 +10,38 @@ import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
-// Scroll to top on route change component
-function ScrollToTop() {
+function ScrollManager() {
   const [pathname] = useLocation();
   
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const hash = window.location.hash;
+    
+    if (hash) {
+      requestAnimationFrame(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
   
   return null;
 }
@@ -24,7 +49,7 @@ function ScrollToTop() {
 function Router() {
   return (
     <>
-      <ScrollToTop />
+      <ScrollManager />
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/product/:id" component={ProductPage} />
