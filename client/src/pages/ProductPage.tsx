@@ -69,8 +69,8 @@ export default function ProductPage() {
             {/* Content Section - Right Side */}
             <div className="space-y-6">
               <div>
-                <span className="text-primary font-bold tracking-wider uppercase text-xs mb-1 block">{product.tagline}</span>
-                <h1 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-3 leading-tight">{product.name}</h1>
+                <h1 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-1 leading-tight">{product.name}</h1>
+                <span className="text-primary font-bold tracking-wider uppercase text-xs mb-3 block">{product.tagline}</span>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {product.description}
                 </p>

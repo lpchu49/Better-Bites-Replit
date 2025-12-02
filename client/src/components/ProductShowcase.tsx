@@ -10,75 +10,101 @@ export const products = [
   {
     id: "classic",
     name: "Classic",
-    tagline: "The Original",
-    short_description: "The ball that started it all. Sweet dates, crunchy almonds, and tropical coconut.",
-    description: "Our Classic energy ball is where it all began. A perfect harmony of sweet Medjool dates, crunchy roasted almonds, and aromatic desiccated coconut. It's simple, honest, and incredibly satisfying.",
+    tagline: "Simply perfect",
+    short_description:
+      "The ball that started it all. Sweet dates, crunchy almonds, and tropical coconut.",
+    description:
+      "Our signature date ball that started it all. A harmonious blend of sweet dates, crunchy almonds, and tropical coconut. Pure, simple, and absolutely delicious.",
     image: coconutImg,
-    ingredients: ["Medjool Dates", "Almonds", "Desiccated Coconut"],
+    ingredients: ["Dates", "Almonds", "Desiccated Coconut"],
     nutrition: {
       kcal: 120,
       protein: "3g",
       fiber: "2g",
       fat: "6g",
       carbs: "18g",
-      sugar: "14g"
+      sugar: "14g",
     },
-    color: "bg-[#F5F5F0]"
+    color: "bg-[#F5F5F0]",
   },
   {
     id: "lux",
     name: "Lux",
     tagline: "Decadent Dark Chocolate",
-    short_description: "A brownie-like experience without the guilt. Rich, dark, and luxurious.",
-    description: "Indulge your chocolate cravings with Lux. We blend dates, almonds, and walnuts with premium 65% dark chocolate and cocoa powder, then roll it all in a dusting of cocoa. It's rich, fudgy, and completely guilt-free.",
+    short_description:
+      "A brownie-like experience without the guilt. Rich, dark, and luxurious.",
+    description:
+      "Indulge your chocolate cravings with Lux. We blend dates, almonds, and walnuts with premium 65% dark chocolate and cocoa powder, then roll it all in a dusting of cocoa. It's rich, fudgy, and completely guilt-free.",
     image: chocolateImg,
-    ingredients: ["Medjool Dates", "Almonds", "Walnuts", "65% Dark Chocolate", "Cocoa Powder"],
+    ingredients: [
+      "Medjool Dates",
+      "Almonds",
+      "Walnuts",
+      "65% Dark Chocolate",
+      "Cocoa Powder",
+    ],
     nutrition: {
       kcal: 135,
       protein: "4g",
       fiber: "3g",
       fat: "7g",
       carbs: "16g",
-      sugar: "12g"
+      sugar: "12g",
     },
-    color: "bg-[#F0EAE5]"
+    color: "bg-[#F0EAE5]",
   },
   {
     id: "zen",
     name: "Zen",
     tagline: "Matcha Pistachio Calm",
     short_description: "Vibrant green tea energy for focused calm and clarity.",
-    description: "Find your center with Zen. Creamy cashews and pistachios blended with dates and coconut, finished with a vibrant coating of premium matcha green tea powder. Earthy, nutty, and perfectly balanced.",
+    description:
+      "Find your center with Zen. Creamy cashews and pistachios blended with dates and coconut, finished with a vibrant coating of premium matcha green tea powder. Earthy, nutty, and perfectly balanced.",
     image: pistachioImg,
-    ingredients: ["Medjool Dates", "Cashews", "Pistachios", "Desiccated Coconut", "Matcha Powder"],
+    ingredients: [
+      "Medjool Dates",
+      "Cashews",
+      "Pistachios",
+      "Desiccated Coconut",
+      "Matcha Powder",
+    ],
     nutrition: {
       kcal: 125,
       protein: "5g",
       fiber: "2.5g",
       fat: "6.5g",
       carbs: "15g",
-      sugar: "11g"
+      sugar: "11g",
     },
-    color: "bg-[#EEF2E8]"
+    color: "bg-[#EEF2E8]",
   },
   {
     id: "zesty",
     name: "Zesty",
     tagline: "Lemon Sunburst",
-    short_description: "A bright burst of sunshine with fresh lemon and sweet raisins.",
-    description: "Wake up your tastebuds with Zesty. We mix dates and creamy cashews with fresh lemon juice, lemon zest, and sweet raisins, then roll it in coconut. It tastes like a slice of lemon tart, but wholesome.",
+    short_description:
+      "A bright burst of sunshine with fresh lemon and sweet raisins.",
+    description:
+      "Wake up your tastebuds with Zesty. We mix dates and creamy cashews with fresh lemon juice, lemon zest, and sweet raisins, then roll it in coconut. It tastes like a slice of lemon tart, but wholesome.",
     image: lemonImg,
-    ingredients: ["Medjool Dates", "Cashews", "Lemon Juice", "Lemon Zest", "Raisins", "Desiccated Coconut"],
+    ingredients: [
+      "Medjool Dates",
+      "Cashews",
+      "Lemon Juice",
+      "Lemon Zest",
+      "Raisins",
+      "Desiccated Coconut",
+    ],
     nutrition: {
       kcal: 118,
       protein: "3g",
       fiber: "2g",
       fat: "5g",
       carbs: "19g",
-      sugar: "15g"
+      sugar: "15g",
     },
-    color: "bg-[#FFFBEB]"
-  }
+    color: "bg-[#FFFBEB]",
+  },
 ];
 
 export function ProductShowcase() {
@@ -90,7 +116,8 @@ export function ProductShowcase() {
             Simple. Real. Delicious.
           </h2>
           <p className="text-muted-foreground text-lg">
-            Four distinct flavors, one simple philosophy: real food tastes better.
+            Four distinct flavors, one simple philosophy: real food tastes
+            better.
           </p>
         </div>
 
@@ -104,7 +131,9 @@ export function ProductShowcase() {
                 viewport={{ once: true }}
                 className="group cursor-pointer h-full flex flex-col"
               >
-                <div className={`aspect-square rounded-3xl overflow-hidden mb-8 relative ${product.color}`}>
+                <div
+                  className={`aspect-square rounded-3xl overflow-hidden mb-8 relative ${product.color}`}
+                >
                   <motion.img
                     src={product.image}
                     alt={product.name}
@@ -119,11 +148,15 @@ export function ProductShowcase() {
                 <div className="space-y-4 flex-grow">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">{product.name}</h3>
-                      <p className="text-primary font-medium text-sm uppercase tracking-wide">{product.tagline}</p>
+                      <h3 className="text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
+                        {product.name}
+                      </h3>
+                      <p className="text-primary font-medium text-sm uppercase tracking-wide">
+                        {product.tagline}
+                      </p>
                     </div>
                   </div>
-                  
+
                   <p className="text-muted-foreground leading-relaxed">
                     {product.short_description}
                   </p>
@@ -135,7 +168,10 @@ export function ProductShowcase() {
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {product.ingredients.map((ing) => (
-                        <span key={ing} className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium">
+                        <span
+                          key={ing}
+                          className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
+                        >
                           {ing}
                         </span>
                       ))}
