@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { Leaf } from "lucide-react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import coconutImg from "@assets/generated_images/classic_date_almond_coconut_ball.png";
-import chocolateImg from "@assets/generated_images/lux_chocolate_date_ball.png";
-import lemonImg from "@assets/generated_images/zesty_lemon_date_ball.png";
-import pistachioImg from "@assets/generated_images/pistachio_coated_date_ball.png";
+import classicImg from "@assets/date_balls_images/classic-date-balls-3.png";
+import luxImg from "@assets/date_balls_images/lux-date-balls-2.png";
+import zestyImg from "@assets/date_balls_images/zesty-date-balls-3.png";
+import zenImg from "@assets/date_balls_images/zen-date-balls-2.png";
 
 export const products = [
   {
     id: "classic",
-    image: coconutImg,
+    image: classicImg,
     ingredients: ["dates", "almonds", "desiccatedCoconut"],
     nutrition: {
       kcal: 49,
@@ -24,7 +24,7 @@ export const products = [
   },
   {
     id: "lux",
-    image: chocolateImg,
+    image: luxImg,
     ingredients: ["dates", "almonds", "walnuts", "darkChocolate", "cocoa"],
     nutrition: {
       kcal: 49,
@@ -38,7 +38,7 @@ export const products = [
   },
   {
     id: "zen",
-    image: pistachioImg,
+    image: zenImg,
     ingredients: ["dates", "cashews", "pistachios", "desiccatedCoconut", "matcha"],
     nutrition: {
       kcal: 48,
@@ -52,7 +52,7 @@ export const products = [
   },
   {
     id: "zesty",
-    image: lemonImg,
+    image: zestyImg,
     ingredients: ["dates", "cashews", "lemon", "raisins", "desiccatedCoconut"],
     nutrition: {
       kcal: 46,
