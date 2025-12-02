@@ -31,11 +31,13 @@ export function Mission() {
             <div className="prose prose-lg text-muted-foreground">
               <p className="mb-6">
                 Our mission is simple: to create snacks that are as honest as
-                they are delicious. We believe that nature provides everything
-                we need to feel energized and vibrant, without unpronouncable
-                ingredients and hidden syrups. That's why our energy balls are
-                made from just a handful of raw, whole, recognizable
-                ingredients.
+                they are delicious.
+              </p>
+              <p className="mb-6">
+                We believe that nature provides everything we need to feel
+                energized and vibrant, without unpronouncable ingredients and
+                hidden syrups. That's why our energy balls are made from just a
+                handful of raw, whole, recognizable ingredients.
               </p>
               <p>
                 Every bite is our promise of quality, sustainability, and pure,

@@ -39,7 +39,7 @@ export function Hero() {
               Explore Flavors
             </a>
             <a
-              href="#mission"
+              href="/about"
               className="px-8 py-4 bg-white/50 text-foreground border border-border rounded-full font-medium text-lg hover:bg-white/80 transition-all"
             >
               Our Story
