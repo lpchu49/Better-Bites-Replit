@@ -1,22 +1,19 @@
-import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const orders = pgTable("orders", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
-  phone: text("phone"),
-  product: text("product").notNull(),
-  message: text("message"),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
+export const orderSchema = z.object({
+  id: z.string(),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().optional(),
+  product: z.string().min(1, "Product is required"),
+  message: z.string().optional(),
+  createdAt: z.string(),
 });
 
-export const insertOrderSchema = createInsertSchema(orders).omit({
+export const insertOrderSchema = orderSchema.omit({
   id: true,
   createdAt: true,
 });
 
 export type InsertOrder = z.infer<typeof insertOrderSchema>;
-export type Order = typeof orders.$inferSelect;
+export type Order = z.infer<typeof orderSchema>;

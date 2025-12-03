@@ -7,6 +7,7 @@ A bilingual (English/Vietnamese) e-commerce website for handcrafted energy balls
 - 🌍 **Bilingual Support** - English and Vietnamese with automatic language detection
 - 🛒 **Product Showcase** - Browse handcrafted energy ball products
 - 📦 **Order Management** - Simple order creation and tracking
+- 📧 **Email Notifications** - Automated order confirmations via Resend
 - 🎨 **Modern UI** - Built with shadcn/ui and Tailwind CSS
 - ⚡ **Fast Performance** - Vite for development, optimized production builds
 - 🔒 **Type-Safe** - Full TypeScript coverage with runtime validation
@@ -15,8 +16,8 @@ A bilingual (English/Vietnamese) e-commerce website for handcrafted energy balls
 
 ### Prerequisites
 
-- Node.js 20+
-- PostgreSQL database (or Neon serverless account)
+- Node.js 20+ (Node 18+ works but shows engine warnings)
+- Resend API key (for email notifications)
 
 ### Installation
 
@@ -29,18 +30,14 @@ cd Better-Bites-Replit
 npm install
 
 # Set up environment variables
-# Create a .env file with:
-# DATABASE_URL=your_postgresql_connection_string
-# PORT=5000
-
-# Push database schema
-npm run db:push
+cp .env.example .env
+# Edit .env and add your Resend API key and email addresses
 
 # Start development server
 npm run dev
 ```
 
-Visit http://localhost:5000 to see the application.
+Visit http://localhost:3000 to see the application.
 
 ## Development Commands
 
@@ -57,11 +54,6 @@ npm run build            # Build for production (client + server)
 npm run check            # TypeScript type checking
 ```
 
-### Database
-```bash
-npm run db:push          # Push schema changes to database
-```
-
 ## Technology Stack
 
 ### Frontend
@@ -76,8 +68,8 @@ npm run db:push          # Push schema changes to database
 
 ### Backend
 - **Express.js** with TypeScript
-- **Drizzle ORM** - Type-safe database queries
-- **Neon PostgreSQL** - Serverless database
+- **JSON file storage** - Simple, no database required
+- **Resend** - Transactional email service
 - **Zod** - Runtime validation
 - **ESM modules** throughout
 
@@ -95,10 +87,14 @@ client/src/           # Frontend React application
 server/              # Backend Express application
   index.ts          # Server setup
   routes.ts         # API endpoints
-  storage.ts        # Database layer
+  storage.ts        # JSON file storage layer
+  email.ts          # Email service (Resend)
+
+data/               # Application data
+  orders.json       # Order storage (auto-created)
 
 shared/              # Shared code between client/server
-  schema.ts         # Database schema and validation
+  schema.ts         # Validation schemas
 ```
 
 ## API Endpoints
@@ -109,10 +105,21 @@ shared/              # Shared code between client/server
 ## Environment Variables
 
 ```bash
-DATABASE_URL      # PostgreSQL connection string (required)
+RESEND_API_KEY    # Resend API key for sending emails (required)
+ADMIN_EMAIL       # Email to receive order notifications (required)
+FROM_EMAIL        # From address for emails (default: onboarding@resend.dev)
 NODE_ENV          # Environment: development/production
 PORT              # Server port (default: 5000)
 ```
+
+### Getting a Resend API Key
+
+1. Sign up at [resend.com](https://resend.com)
+2. Go to [API Keys](https://resend.com/api-keys) 
+3. Create a new API key
+4. Add it to your `.env` file
+
+For testing, you can use `onboarding@resend.dev` as the FROM_EMAIL. For production, you'll need to verify your own domain.
 
 ## Key Features
 
@@ -121,9 +128,13 @@ Automatic language detection with browser preferences, supports English and Viet
 
 ### Type Safety
 - TypeScript throughout the stack
-- Drizzle ORM for type-safe database queries
 - Zod schemas for runtime validation
 - Shared types between client and server
+
+### Email Notifications
+- Customer receives order confirmation
+- Admin receives order notification with details
+- Non-blocking email sending (doesn't delay order response)
 
 ### Modern Architecture
 - ESM modules

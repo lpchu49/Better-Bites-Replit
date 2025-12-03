@@ -21,17 +21,6 @@ npm run build            # Build both client (Vite) and server (esbuild) for pro
 npm run check            # Run TypeScript type checking
 ```
 
-### Database
-```bash
-npm run db:push          # Push database schema changes to PostgreSQL using Drizzle Kit
-```
-
-**Database Setup:**
-- Requires `DATABASE_URL` environment variable pointing to a PostgreSQL database
-- Uses Neon serverless PostgreSQL via `@neondatabase/serverless`
-- Schema is defined in `shared/schema.ts` and managed with Drizzle ORM
-- Migrations output to `./migrations` directory
-
 ## Architecture
 
 ### Project Structure
@@ -51,12 +40,16 @@ client/src/           # Frontend React application
 server/              # Backend Express application
   index.ts          # Express server setup with logging middleware
   routes.ts         # API route handlers (/api/orders)
-  storage.ts        # Database access layer (IStorage interface, DbStorage implementation)
+  storage.ts        # Storage layer (IStorage interface, JsonStorage implementation)
+  email.ts          # Email service using Resend for order confirmations
   static.ts         # Static file serving for production
   vite.ts           # Vite dev server integration
 
+data/               # Application data
+  orders.json       # JSON file storing orders (auto-created)
+
 shared/              # Code shared between client and server
-  schema.ts         # Drizzle ORM schema and Zod validation schemas
+  schema.ts         # Zod validation schemas for orders
 
 script/
   build.ts          # Custom build script for production
@@ -74,11 +67,17 @@ script/
 - Production: Static files built to `dist/public`, server bundled to `dist/index.cjs`
 - Build script uses selective dependency bundling (allowlist in `script/build.ts`) to optimize cold starts
 
-**Database Layer:**
+**Storage Layer:**
 - Repository pattern via `IStorage` interface in `server/storage.ts`
+- `JsonStorage` implementation stores orders in `data/orders.json`
 - Singleton `storage` instance exported for use in routes
-- Drizzle ORM provides type-safe queries; Drizzle Kit manages migrations
-- Zod schemas auto-generated from Drizzle schema via `drizzle-zod`
+- Easy to swap for database or Google Sheets implementation later
+
+**Email Notifications:**
+- Resend API integration in `server/email.ts`
+- Sends confirmation email to customer and notification to admin
+- Triggered automatically when orders are created
+- Requires `RESEND_API_KEY`, `ADMIN_EMAIL`, and `FROM_EMAIL` environment variables
 
 **Client-Side Routing:**
 - Uses Wouter (lightweight alternative to React Router)
@@ -98,7 +97,7 @@ script/
 
 **Validation:**
 - Zod schemas for runtime validation
-- `insertOrderSchema` derived from Drizzle schema for API requests
+- `insertOrderSchema` validates incoming order data
 - API errors formatted with `zod-validation-error` for user-friendly messages
 
 ### API Endpoints
@@ -122,7 +121,8 @@ script/
 **Backend:**
 - Express.js with TypeScript
 - ESM (ES Modules) throughout
-- Drizzle ORM with Neon PostgreSQL
+- JSON file storage for orders
+- Resend for transactional emails
 - Custom request logging middleware
 
 **Styling:**
@@ -143,7 +143,9 @@ script/
 - Single port serves both API and client
 
 **Environment Variables:**
-- `DATABASE_URL` - Required for database connection
+- `RESEND_API_KEY` - Required for sending order confirmation emails
+- `ADMIN_EMAIL` - Email address to receive order notifications
+- `FROM_EMAIL` - From address for emails (e.g., "orders@yourdomain.com")
 - `NODE_ENV` - Set to "production" for production builds
 - `PORT` - Server port (default: 5000)
 
@@ -165,6 +167,10 @@ script/
 
 **Type Safety:**
 - Strict TypeScript configuration
-- Drizzle infers database types
-- Zod validates runtime data
+- Zod schemas define and validate data structures
 - Shared types between client/server via `@shared/` imports
+
+**Data Persistence:**
+- Orders stored in `data/orders.json` file
+- File is created automatically on first order
+- Can be easily migrated to database or Google Sheets later by swapping `IStorage` implementation
