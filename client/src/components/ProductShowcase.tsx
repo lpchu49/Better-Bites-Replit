@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Leaf } from "lucide-react";
+import { Leaf, Star } from "lucide-react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import classicImg from "@assets/date_balls_images/classic-date-balls-3.png";
@@ -63,6 +63,7 @@ export const products = [
       sugar: "2.8g",
     },
     color: "bg-[#FFFBEB]",
+    bestSeller: true,
   },
 ];
 
@@ -103,6 +104,14 @@ export function ProductShowcase() {
                   <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-sm text-xs font-medium text-foreground">
                     {product.nutrition.kcal} {t('products.kcalPerBall')}
                   </div>
+
+                  {/* Best Seller Badge */}
+                  {product.bestSeller && (
+                    <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-lg text-sm font-bold flex items-center gap-2 z-10">
+                      <Star className="w-4 h-4 fill-current" />
+                      Best Seller
+                    </div>
+                  )}
                 </div>
 
                 <div className="space-y-4 flex-grow">
@@ -111,7 +120,7 @@ export function ProductShowcase() {
                       <h3 className="text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
                         {t(`products.${product.id}.name`)}
                       </h3>
-                      <p className="text-primary font-medium text-sm uppercase tracking-wide">
+                      <p className="text-primary font-medium text-base uppercase tracking-wide">
                         {t(`products.${product.id}.tagline`)}
                       </p>
                     </div>
