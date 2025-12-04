@@ -6,11 +6,13 @@
     "orderNow": "Đặt Hàng"
   },
   "hero": {
-    "badge": "100% Nguyên Liệu Tự Nhiên",
-    "title": "Đồ ăn vặt lành mạnh từng có vị như thế này.",
-    "description": "Bánh năng lượng thủ công làm từ chà là, hạt và tình yêu. Không chất nhân tạo. Chỉ có thực phẩm thật khiến bạn cảm thấy tuyệt vời.",
-    "exploreFlavors": "Khám Phá Hương Vị",
-    "ourStory": "Câu Chuyện"
+    "badge": "100% Tự Nhiên",
+    "badgeHandmade": "Thủ Công",
+    "badgeVegan": "Thuần Chay",
+    "title": "Trở về với thực phẩm thật.",
+    "description": "Viên năng lượng làm thủ công từ các loại hạt và hoa quả sấy khô. Không thêm đường, không chất bảo quản, không hương liệu. Quay về với vị thật, sống sạch từ gốc.",
+    "exploreFlavors": "Khám phá các hương vị",
+    "ourStory": "Câu chuyện của chúng tôi"
   },
   "products": {
     "title": "Đơn Giản. Thật. Ngon.",

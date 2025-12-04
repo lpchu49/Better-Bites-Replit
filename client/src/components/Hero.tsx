@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Leaf, HandHeart, Sprout } from "lucide-react";
 import heroBg from "@assets/generated_images/rustic_table_with_date_ball_ingredients_and_negative_space.png";
 
 export function Hero() {
@@ -25,9 +26,20 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-2xl bg-background/60 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-white/20 shadow-xl text-center"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-6 tracking-wide uppercase">
-            {t('hero.badge')}
-          </span>
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium tracking-wide uppercase">
+              <Leaf className="w-4 h-4" />
+              {t('hero.badge')}
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium tracking-wide uppercase">
+              <HandHeart className="w-4 h-4" />
+              {t('hero.badgeHandmade')}
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium tracking-wide uppercase">
+              <Sprout className="w-4 h-4" />
+              {t('hero.badgeVegan')}
+            </span>
+          </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-6 leading-[1.1]">
             {t('hero.title')}
           </h1>

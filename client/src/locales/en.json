@@ -6,14 +6,16 @@
     "orderNow": "Order Now"
   },
   "hero": {
-    "badge": "100% Natural Ingredients",
+    "badge": "100% Natural",
+    "badgeHandmade": "Handmade",
+    "badgeVegan": "Vegan",
     "title": "Wholesome snacks used to taste like this.",
-    "description": "Handcrafted energy balls made from dates, nuts, and love. No artificial nonsense. Just real food that makes you feel good.",
+    "description": "Handcrafted energy balls made from dates, nuts, and dried fruits. No artificial nonsense. Just real food that leaves you feeling grounded.",
     "exploreFlavors": "Explore Flavors",
     "ourStory": "Our Story"
   },
   "products": {
-    "title": "Simple. Real. Delicious.",
+    "title": "Real. Simple. Joy.",
     "subtitle": "Four distinct flavors, one simple philosophy: real food tastes better.",
     "ingredients": "Ingredients",
     "kcalPerBall": "kcal / ball",
@@ -69,7 +71,7 @@
     "sugarNote": "*Natural sugar from dates"
   },
   "mission": {
-    "title": "Food that fuels your soul.",
+    "title": "Food that brings balance.",
     "paragraph1": "Our mission is simple: to create snacks that are as honest as they are delicious.",
     "paragraph2": "We believe that nature provides everything we need to feel energized and vibrant, without unpronouncable ingredients and hidden syrups. That's why our energy balls are made from just a handful of raw, whole, recognizable ingredients.",
     "paragraph3": "Every bite is our promise of quality, sustainability, and pure, simple flavor.",
