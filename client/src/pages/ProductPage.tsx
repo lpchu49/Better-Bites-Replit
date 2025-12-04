@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useRoute } from "wouter";
 import { products } from "@/components/ProductShowcase";
 import { Navbar } from "@/components/Navbar";
@@ -11,6 +12,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 
 export default function ProductPage() {
@@ -23,7 +25,22 @@ export default function ProductPage() {
 
   if (!product) return <NotFound />;
 
-  const productImages = [product.image, product.image, product.image];
+  const productImages = product.gallery || [product.image];
+
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
@@ -54,7 +71,7 @@ export default function ProductPage() {
                 )}
               </div>
 
-              <Carousel className="w-full rounded-2xl overflow-hidden bg-secondary/20">
+              <Carousel setApi={setApi} className="w-full rounded-2xl overflow-hidden bg-secondary/20">
                 <CarouselContent>
                   {productImages.map((img, index) => (
                     <CarouselItem key={index}>
@@ -75,9 +92,15 @@ export default function ProductPage() {
 
               {/* Dots indicator */}
               <div className="flex justify-center gap-1.5 mt-4">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/30"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/30"></div>
+                {productImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => api?.scrollTo(index)}
+                    className={`w-1.5 h-1.5 rounded-full transition-colors ${current === index ? "bg-primary" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                      }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
 

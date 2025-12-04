@@ -2,15 +2,26 @@ import { motion } from "framer-motion";
 import { Leaf, Star } from "lucide-react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import classicImg from "@assets/date_balls_images/classic-date-balls-3.png";
-import luxImg from "@assets/date_balls_images/lux-date-balls-2.png";
-import zestyImg from "@assets/date_balls_images/zesty-date-balls-3.png";
-import zenImg from "@assets/date_balls_images/zen-date-balls-2.png";
+import classicImg1 from "@assets/date_balls_images/classic-date-balls-1.png";
+import classicImg2 from "@assets/date_balls_images/classic-date-balls-2.png";
+import classicImg3 from "@assets/date_balls_images/classic-date-balls-3.png";
+import luxImg1 from "@assets/date_balls_images/lux-date-balls-1.png";
+import luxImg2 from "@assets/date_balls_images/lux-date-balls-2.png";
+import zestyImg1 from "@assets/date_balls_images/zesty-date-balls-1.png";
+import zestyImg2 from "@assets/date_balls_images/zesty-date-balls-2.png";
+import zestyImg3 from "@assets/date_balls_images/zesty-date-balls-3.png";
+import zestyPackageImg from "@assets/packaging/zesty-package-vnese.png";
+import zenImg1 from "@assets/date_balls_images/zen-date-balls-1.png";
+import zenImg2 from "@assets/date_balls_images/zen-date-balls-2.png";
+import classicPackageVnese from "@assets/packaging/classic-package-vnese.png";
+import classicPackageEng from "@assets/packaging/classic-package-eng.png";
+import luxPackageVnese from "@assets/packaging/lux-package-vnese.png";
+import zenPackageVnese from "@assets/packaging/zen-package-vnese.png";
 
 export const products = [
   {
     id: "classic",
-    image: classicImg,
+    image: classicImg1,
     ingredients: ["dates", "almonds", "desiccatedCoconut"],
     nutrition: {
       kcal: 49,
@@ -21,10 +32,11 @@ export const products = [
       sugar: "2.6g",
     },
     color: "bg-[#F5F5F0]",
+    gallery: [classicImg1, classicImg2, classicImg3, classicPackageVnese, classicPackageEng],
   },
   {
     id: "lux",
-    image: luxImg,
+    image: luxImg1,
     ingredients: ["dates", "almonds", "walnuts", "darkChocolate", "cocoa"],
     nutrition: {
       kcal: 49,
@@ -35,10 +47,11 @@ export const products = [
       sugar: "2.3g",
     },
     color: "bg-[#F0EAE5]",
+    gallery: [luxImg1, luxImg2, luxPackageVnese],
   },
   {
     id: "zen",
-    image: zenImg,
+    image: zenImg1,
     ingredients: ["dates", "cashews", "pistachios", "desiccatedCoconut", "matcha"],
     nutrition: {
       kcal: 48,
@@ -49,10 +62,11 @@ export const products = [
       sugar: "2.5g",
     },
     color: "bg-[#EEF2E8]",
+    gallery: [zenImg1, zenImg2, zenPackageVnese],
   },
   {
     id: "zesty",
-    image: zestyImg,
+    image: zestyImg1,
     ingredients: ["dates", "cashews", "lemon", "raisins", "desiccatedCoconut"],
     nutrition: {
       kcal: 46,
@@ -64,6 +78,7 @@ export const products = [
     },
     color: "bg-[#FFFBEB]",
     bestSeller: true,
+    gallery: [zestyImg1, zestyImg2, zestyImg3, zestyPackageImg],
   },
 ];
 
