@@ -7,5 +7,13 @@ export NVM_DIR="$HOME/.nvm"
 # Use Node 20 from .nvmrc
 nvm use
 
+# Load environment variables from .env file
+# set -a enables automatic export of all variables
+# source .env loads the file
+# set +a disables automatic export
+set -a
+[ -f .env ] && source .env
+set +a
+
 # Start the development server
 npm run dev
