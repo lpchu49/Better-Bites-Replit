@@ -31,13 +31,14 @@ export const products = [
       carbs: "3.9g",
       sugar: "2.6g",
     },
+    price: "10.000₫",
     color: "bg-[#F5F5F0]",
     gallery: [classicImg1, classicImg2, classicImg3, classicPackageVnese, classicPackageEng],
   },
   {
     id: "lux",
     image: luxImg1,
-    ingredients: ["dates", "almonds", "walnuts", "darkChocolate", "cocoa"],
+    ingredients: ["dates", "almonds", "walnuts", "cocoa", "darkChocolate"],
     nutrition: {
       kcal: 49,
       protein: "1.3g",
@@ -46,13 +47,14 @@ export const products = [
       carbs: "3.9g",
       sugar: "2.3g",
     },
+    price: "13.000₫",
     color: "bg-[#F0EAE5]",
     gallery: [luxImg1, luxImg2, luxPackageVnese],
   },
   {
     id: "zen",
     image: zenImg1,
-    ingredients: ["dates", "cashews", "pistachios", "desiccatedCoconut", "matcha"],
+    ingredients: ["dates", "cashews", "pistachios", "matcha", "desiccatedCoconut"],
     nutrition: {
       kcal: 48,
       protein: "1.3g",
@@ -61,6 +63,7 @@ export const products = [
       carbs: "4.3g",
       sugar: "2.5g",
     },
+    price: "13.000₫",
     color: "bg-[#EEF2E8]",
     gallery: [zenImg1, zenImg2, zenPackageVnese],
   },
@@ -76,6 +79,7 @@ export const products = [
       carbs: "4.3g",
       sugar: "2.8g",
     },
+    price: "15.000₫",
     color: "bg-[#FFFBEB]",
     bestSeller: true,
     gallery: [zestyImg1, zestyImg2, zestyImg3, zestyPackageImg],
@@ -116,7 +120,7 @@ export function ProductShowcase() {
                     className="w-full h-full object-cover mix-blend-overlay opacity-90 md:mix-blend-normal md:opacity-100 transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Nutrition Badge */}
-                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-sm text-xs font-medium text-foreground">
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-sm text-sm font-medium text-foreground">
                     {product.nutrition.kcal} {t('products.kcalPerBall')}
                   </div>
 
@@ -146,7 +150,7 @@ export function ProductShowcase() {
                   </p>
 
                   <div className="pt-4 border-t border-border">
-                    <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
+                    <h4 className="text-base font-semibold mb-3 flex items-center gap-2">
                       <Leaf className="w-4 h-4 text-green-600" />
                       {t('products.ingredients')}
                     </h4>
@@ -154,7 +158,7 @@ export function ProductShowcase() {
                       {product.ingredients.map((ing) => (
                         <span
                           key={ing}
-                          className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
+                          className="text-sm px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
                         >
                           {t(`products.ingredientNames.${ing}`)}
                         </span>

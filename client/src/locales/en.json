@@ -68,7 +68,9 @@
     "sugar": "Sugar*",
     "protein": "Protein",
     "fat": "Fat",
-    "sugarNote": "*Natural sugar from dates"
+    "sugarNote": "*Natural sugar from dates",
+    "price": "Price",
+    "unit": "per ball (10g)"
   },
   "mission": {
     "title": "Food that brings balance.",

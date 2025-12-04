@@ -22,7 +22,7 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="/" className="text-2xl font-serif font-bold tracking-tighter text-primary">
+        <a href="/" className="text-3xl font-serif font-bold tracking-tighter text-primary">
           Better Bites.
         </a>
 
@@ -32,21 +32,21 @@ export function Navbar() {
             <a
               key={link.key}
               href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
             >
               {t(link.key)}
             </a>
           ))}
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors px-3 py-1.5 rounded-full border border-border/50 hover:border-primary/50"
+            className="flex items-center gap-1.5 text-base font-medium text-foreground/80 hover:text-primary transition-colors px-3 py-1.5 rounded-full border border-border/50 hover:border-primary/50"
             data-testid="button-language-toggle"
           >
             <Globe className="w-4 h-4" />
             {i18n.language === 'en' ? 'VI' : 'EN'}
           </button>
           <OrderModal>
-            <button className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors shadow-sm cursor-pointer">
+            <button className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-base font-medium hover:bg-primary/90 transition-colors shadow-sm cursor-pointer">
               {t('nav.orderNow')}
             </button>
           </OrderModal>

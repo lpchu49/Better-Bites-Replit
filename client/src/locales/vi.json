@@ -68,7 +68,9 @@
     "sugar": "Đường*",
     "protein": "Protein",
     "fat": "Chất Béo",
-    "sugarNote": "*Đường tự nhiên từ chà là"
+    "sugarNote": "*Đường tự nhiên từ chà là",
+    "price": "Giá",
+    "unit": "mỗi viên (10g)"
   },
   "mission": {
     "title": "Thức ăn nuôi dưỡng tâm hồn.",

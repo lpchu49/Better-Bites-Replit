@@ -31,7 +31,7 @@ export function Mission() {
             <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 text-foreground">
               {t('mission.title')}
             </h2>
-            <div className="prose prose-lg text-muted-foreground">
+            <div className="prose prose-xl text-muted-foreground">
               <p className="mb-6">
                 {t('mission.paragraph1')}
               </p>
