@@ -1,6 +1,7 @@
 import { Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
 import { OrderModal } from "@/components/OrderModal";
 import { useTranslation } from "react-i18next";
 
@@ -22,20 +23,30 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="/" className="text-3xl font-serif font-bold tracking-tighter text-primary">
+        <Link href="/" className="text-3xl font-serif font-bold tracking-tighter text-primary">
           Better Bites.
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {linkKeys.map((link) => (
-            <a
-              key={link.key}
-              href={link.href}
-              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
-            >
-              {t(link.key)}
-            </a>
+            link.href.includes('#') ? (
+              <a
+                key={link.key}
+                href={link.href}
+                className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              >
+                {t(link.key)}
+              </a>
+            ) : (
+              <Link
+                key={link.key}
+                href={link.href}
+                className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              >
+                {t(link.key)}
+              </Link>
+            )
           ))}
           <button
             onClick={toggleLanguage}
@@ -72,14 +83,25 @@ export function Navbar() {
           >
             <div className="flex flex-col p-6 gap-4">
               {linkKeys.map((link) => (
-                <a
-                  key={link.key}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-foreground/90"
-                >
-                  {t(link.key)}
-                </a>
+                link.href.includes('#') ? (
+                  <a
+                    key={link.key}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-lg font-medium text-foreground/90"
+                  >
+                    {t(link.key)}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.key}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-lg font-medium text-foreground/90"
+                  >
+                    {t(link.key)}
+                  </Link>
+                )
               ))}
               <button
                 onClick={toggleLanguage}
