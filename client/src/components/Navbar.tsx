@@ -34,7 +34,7 @@ export function Navbar() {
               <a
                 key={link.key}
                 href={link.href}
-                className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
               >
                 {t(link.key)}
               </a>
@@ -42,7 +42,7 @@ export function Navbar() {
               <Link
                 key={link.key}
                 href={link.href}
-                className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
               >
                 {t(link.key)}
               </Link>
@@ -50,14 +50,14 @@ export function Navbar() {
           ))}
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1.5 text-base font-medium text-foreground/80 hover:text-primary transition-colors px-3 py-1.5 rounded-full border border-border/50 hover:border-primary/50"
+            className="flex items-center gap-1.5 text-lg font-medium text-foreground/80 hover:text-primary transition-colors px-3 py-1.5 rounded-full border border-border/50 hover:border-primary/50"
             data-testid="button-language-toggle"
           >
             <Globe className="w-4 h-4" />
             {i18n.language === 'en' ? 'VI' : 'EN'}
           </button>
           <OrderModal>
-            <button className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-base font-medium hover:bg-primary/90 transition-colors shadow-sm cursor-pointer">
+            <button className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-lg font-medium hover:bg-primary/90 transition-colors shadow-sm cursor-pointer">
               {t('nav.orderNow')}
             </button>
           </OrderModal>

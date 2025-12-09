@@ -4,7 +4,9 @@ import { Leaf, HandHeart, Sprout } from "lucide-react";
 import heroBg from "@assets/generated_images/rustic_table_with_date_ball_ingredients_and_negative_space.png";
 
 import { H1Format } from "./ui/H1Format";
+import { H2BodyFormat } from "./ui/H2BodyFormat";
 import { H1BodyFormat } from "./ui/H1BodyFormat";
+import { H3BodyFormat } from "./ui/H3BodyFormat";
 import { CardText } from "./ui/CardText";
 
 export function Hero() {
@@ -53,19 +55,19 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#products"
-              className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium text-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 transform hover:-translate-y-0.5"
+              className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 transform hover:-translate-y-0.5"
             >
-              <H1BodyFormat as="span" className="text-primary-foreground">
+              <H2BodyFormat as="span" className="text-primary-foreground">
                 {t('hero.exploreFlavors')}
-              </H1BodyFormat>
+              </H2BodyFormat>
             </a>
             <a
               href="/about"
-              className="px-8 py-4 bg-white/50 text-foreground border border-border rounded-full font-medium text-lg hover:bg-white/80 transition-all"
+              className="px-8 py-4 bg-white/50 text-foreground border border-border rounded-full font-medium hover:bg-white/80 transition-all"
             >
-              <H1BodyFormat as="span" className="text-foreground">
+              <H2BodyFormat as="span" className="text-foreground">
                 {t('hero.ourStory')}
-              </H1BodyFormat>
+              </H2BodyFormat>
             </a>
           </div>
         </motion.div>

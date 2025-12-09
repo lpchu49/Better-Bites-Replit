@@ -1,5 +1,8 @@
 import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { H4Format } from "./ui/H4Format";
+import { H5Format } from "./ui/H5Format";
+import { H6Format } from "./ui/H6Format";
 
 export function Contact() {
   const { t } = useTranslation();
@@ -26,7 +29,7 @@ export function Contact() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">{t('contact.quickLinks')}</h4>
+            <H6Format className="text-white font-bold mb-6">{t('contact.quickLinks')}</H6Format>
             <ul className="space-y-4 text-stone-400">
               <li>
                 <a href="/" className="hover:text-primary transition-colors">
@@ -47,7 +50,7 @@ export function Contact() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">{t('contact.getInTouch')}</h4>
+            <H6Format className="text-white font-bold mb-6">{t('contact.getInTouch')}</H6Format>
             <ul className="space-y-4 text-stone-400">
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary" />
