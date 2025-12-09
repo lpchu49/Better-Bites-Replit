@@ -63,13 +63,23 @@ export function Navbar() {
           </OrderModal>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 text-foreground"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </button>
+        {/* Mobile: Language Toggle + Menu Button */}
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors px-2 py-1.5 rounded-full border border-border/50"
+            data-testid="button-language-toggle-mobile-header"
+          >
+            <Globe className="w-4 h-4" />
+            {i18n.language === 'en' ? 'VI' : 'EN'}
+          </button>
+          <button
+            className="p-2 text-foreground"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
@@ -103,14 +113,6 @@ export function Navbar() {
                   </Link>
                 )
               ))}
-              <button
-                onClick={toggleLanguage}
-                className="flex items-center gap-2 text-lg font-medium text-foreground/90"
-                data-testid="button-language-toggle-mobile"
-              >
-                <Globe className="w-5 h-5" />
-                {i18n.language === 'en' ? 'Tiếng Việt' : 'English'}
-              </button>
               <OrderModal>
                 <button className="bg-primary text-primary-foreground w-full py-3 rounded-full font-bold mt-2 cursor-pointer">
                   {t('nav.orderNow')}
