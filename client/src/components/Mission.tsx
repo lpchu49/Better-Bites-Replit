@@ -8,10 +8,10 @@ export function Mission() {
   const { t } = useTranslation();
 
   const benefits = [
-    t('mission.benefits.noAddedSugars'),
-    t('mission.benefits.glutenFree'),
-    t('mission.benefits.vegan'),
-    t('mission.benefits.preservativeFree'),
+    t("mission.benefits.noAddedSugars"),
+    t("mission.benefits.glutenFree"),
+    t("mission.benefits.vegan"),
+    t("mission.benefits.preservativeFree"),
   ];
 
   return (
@@ -30,26 +30,27 @@ export function Mission() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <H2Format className="mb-8">
-              {t('mission.title')}
-            </H2Format>
+            <H2Format className="mb-8">{t("mission.title")}</H2Format>
             <div className="prose prose-xl text-muted-foreground">
               <H2BodyFormat className="mb-6">
-                {t('mission.paragraph1')}
+                {t("mission.paragraph1")}
               </H2BodyFormat>
               <H2BodyFormat className="mb-6">
-                {t('mission.paragraph2')}
+                {t("mission.paragraph2")}
               </H2BodyFormat>
-              <H2BodyFormat>
-                {t('mission.paragraph3')}
-              </H2BodyFormat>
+              <H2BodyFormat>{t("mission.paragraph3")}</H2BodyFormat>
             </div>
 
             <div className="grid grid-cols-2 gap-4 mt-10">
               {benefits.map((benefit) => (
                 <div key={benefit} className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary" />
-                  <H2BodyFormat as="span" className="font-medium text-foreground">{benefit}</H2BodyFormat>
+                  <H2BodyFormat
+                    as="span"
+                    className="font-medium text-foreground"
+                  >
+                    {benefit}
+                  </H2BodyFormat>
                 </div>
               ))}
             </div>
@@ -63,7 +64,7 @@ export function Mission() {
             className="relative h-[400px] md:h-[500px] lg:h-[600px] rounded-[2rem] overflow-hidden bg-stone-200"
           >
             <div className="absolute inset-0 bg-stone-900 p-6 md:p-12 flex flex-col justify-between">
-              <div className="text-white/20 text-5xl md:text-7xl lg:text-9xl font-serif font-black leading-none select-none">
+              <div className="text-white/20 text-6xl md:text-7xl lg:text-9xl font-serif font-black leading-none select-none">
                 REAL
                 <br />
                 FOOD
@@ -71,10 +72,10 @@ export function Mission() {
               <div className="space-y-6">
                 <div className="h-px w-24 bg-primary" />
                 <blockquote className="text-2xl md:text-3xl text-white font-serif italic">
-                  {t('mission.quote')}
+                  {t("mission.quote")}
                 </blockquote>
                 <cite className="text-white/60 not-italic block">
-                  {t('mission.quoteAuthor')}
+                  {t("mission.quoteAuthor")}
                 </cite>
               </div>
             </div>
