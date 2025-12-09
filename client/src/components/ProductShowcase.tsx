@@ -126,7 +126,7 @@ export function ProductShowcase() {
                   <motion.img
                     src={product.image}
                     alt={t(`products.${product.id}.name`)}
-                    className="w-full h-full object-cover mix-blend-overlay opacity-90 md:mix-blend-normal md:opacity-100 transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Nutrition Badge */}
                   {/* Nutrition Badge */}
