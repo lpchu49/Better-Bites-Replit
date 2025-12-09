@@ -60,10 +60,10 @@ export function Mission() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[600px] rounded-[2rem] overflow-hidden bg-stone-200"
+            className="relative h-[400px] md:h-[500px] lg:h-[600px] rounded-[2rem] overflow-hidden bg-stone-200"
           >
-            <div className="absolute inset-0 bg-stone-900 p-12 flex flex-col justify-between">
-              <div className="text-white/20 text-9xl font-serif font-black leading-none select-none">
+            <div className="absolute inset-0 bg-stone-900 p-6 md:p-12 flex flex-col justify-between">
+              <div className="text-white/20 text-5xl md:text-7xl lg:text-9xl font-serif font-black leading-none select-none">
                 REAL
                 <br />
                 FOOD
