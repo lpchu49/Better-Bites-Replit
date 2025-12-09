@@ -70,7 +70,9 @@
     "fat": "Chất Béo",
     "sugarNote": "*Đường tự nhiên từ chà là",
     "price": "Giá",
-    "unit": "mỗi viên (10g)"
+    "unit": "mỗi viên (10g)",
+    "storage": "Bảo quản",
+    "storageInstruction": "Giữ lạnh để đảm bảo độ tươi ngon."
   },
   "mission": {
     "title": "Thức ăn nuôi dưỡng tâm hồn.",

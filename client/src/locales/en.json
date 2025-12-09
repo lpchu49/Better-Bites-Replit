@@ -70,7 +70,9 @@
     "fat": "Fat",
     "sugarNote": "*Natural sugar from dates",
     "price": "Price",
-    "unit": "per ball (10g)"
+    "unit": "per ball (10g)",
+    "storage": "Storage",
+    "storageInstruction": "Keep refrigerated for best freshness. Enjoy within 14 days. For extended shelf life, freeze for up to 1 month."
   },
   "mission": {
     "title": "Food that brings balance.",

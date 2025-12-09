@@ -3,7 +3,7 @@ import { useRoute } from "wouter";
 import { products } from "@/components/ProductShowcase";
 import { Navbar } from "@/components/Navbar";
 import { Contact } from "@/components/Contact";
-import { ArrowLeft, Leaf, Star } from "lucide-react";
+import { ArrowLeft, Leaf, Star, Box } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import NotFound from "@/pages/not-found";
 import { H3Format } from "@/components/ui/H3Format";
@@ -125,6 +125,16 @@ export default function ProductPage() {
                   </H3BodyFormat>
                 </div>
               </div>
+
+              <div className="mt-6 bg-primary/10 rounded-2xl p-5">
+                <H6Format as="h6" className="mb-2 flex items-center gap-2">
+                  <Box className="w-4 h-4 text-primary" />
+                  {t('productPage.storage')}
+                </H6Format>
+                <H4BodyFormat>
+                  {t('productPage.storageInstruction')}
+                </H4BodyFormat>
+              </div>
             </div>
 
             {/* Content Section - Right Side */}
@@ -142,10 +152,10 @@ export default function ProductPage() {
 
               <div className="flex flex-col gap-5">
                 <div className="bg-secondary/30 rounded-2xl p-5 w-full">
-                  <H5Format as="h5" className="mb-4 flex items-center gap-2">
+                  <H6Format as="h6" className="mb-4 flex items-center gap-2">
                     <Leaf className="w-4 h-4 text-green-600" />
                     {t('products.ingredients')}
-                  </H5Format>
+                  </H6Format>
                   <div className="flex flex-wrap gap-2">
                     {product.ingredients.map((ing) => (
                       <TagFormat key={ing} className="text-sm md:text-base">
@@ -157,7 +167,7 @@ export default function ProductPage() {
 
                 {/* Nutrition Section - Full Width */}
                 <div className="border border-border rounded-2xl p-5 w-full">
-                  <H5Format as="h3" className="mb-4">{t('productPage.nutritionFacts')}</H5Format>
+                  <H6Format as="h3" className="mb-4">{t('productPage.nutritionFacts')}</H6Format>
 
                   {/* Serving Size */}
                   <div className="flex justify-between items-center border-b border-border pb-3 mb-3">
