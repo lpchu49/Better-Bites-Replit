@@ -17,6 +17,15 @@ import classicPackageVnese from "@assets/packaging/classic-package-vnese.png";
 import classicPackageEng from "@assets/packaging/classic-package-eng.png";
 import luxPackageVnese from "@assets/packaging/lux-package-vnese.png";
 import zenPackageVnese from "@assets/packaging/zen-package-vnese.png";
+import { H2Format } from "@/components/ui/H2Format";
+import { H4Format } from "@/components/ui/H4Format";
+import { H5Format } from "@/components/ui/H5Format";
+import { H6Format } from "@/components/ui/H6Format";
+import { TagFormat } from "@/components/ui/TagFormat";
+import { H2BodyFormat } from "@/components/ui/H2BodyFormat";
+import { H3BodyFormat } from "@/components/ui/H3BodyFormat";
+import { H4BodyFormat } from "@/components/ui/H4BodyFormat";
+import { CardText } from "@/components/ui/CardText";
 
 export const products = [
   {
@@ -93,12 +102,12 @@ export function ProductShowcase() {
     <section id="products" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-foreground">
+          <H2Format className="mb-6">
             {t('products.title')}
-          </h2>
-          <p className="text-muted-foreground text-lg">
+          </H2Format>
+          <H2BodyFormat className="max-w-2xl mx-auto mb-16">
             {t('products.subtitle')}
-          </p>
+          </H2BodyFormat>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -120,13 +129,14 @@ export function ProductShowcase() {
                     className="w-full h-full object-cover mix-blend-overlay opacity-90 md:mix-blend-normal md:opacity-100 transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Nutrition Badge */}
-                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-sm text-sm font-medium text-foreground">
+                  {/* Nutrition Badge */}
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-sm text-xs md:text-sm font-medium text-foreground">
                     {product.nutrition.kcal} {t('products.kcalPerBall')}
                   </div>
 
                   {/* Best Seller Badge */}
                   {product.bestSeller && (
-                    <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-lg text-sm font-bold flex items-center gap-2 z-10">
+                    <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-lg text-sm md:text-base font-bold flex items-center gap-2 z-10">
                       <Star className="w-4 h-4 fill-current" />
                       Best Seller
                     </div>
@@ -136,32 +146,29 @@ export function ProductShowcase() {
                 <div className="space-y-4 flex-grow">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
+                      <H4Format as="h3" className="group-hover:text-primary transition-colors">
                         {t(`products.${product.id}.name`)}
-                      </h3>
-                      <p className="text-primary font-medium text-base uppercase tracking-wide">
+                      </H4Format>
+                      <H4BodyFormat className="text-primary font-bold uppercase tracking-wider">
                         {t(`products.${product.id}.tagline`)}
-                      </p>
+                      </H4BodyFormat>
                     </div>
                   </div>
 
-                  <p className="text-muted-foreground leading-relaxed">
+                  <H4BodyFormat>
                     {t(`products.${product.id}.shortDescription`)}
-                  </p>
+                  </H4BodyFormat>
 
                   <div className="pt-4 border-t border-border">
-                    <h4 className="text-base font-semibold mb-3 flex items-center gap-2">
+                    <H6Format className="mb-3 flex items-center gap-2">
                       <Leaf className="w-4 h-4 text-green-600" />
                       {t('products.ingredients')}
-                    </h4>
+                    </H6Format>
                     <div className="flex flex-wrap gap-2">
                       {product.ingredients.map((ing) => (
-                        <span
-                          key={ing}
-                          className="text-sm px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
-                        >
+                        <TagFormat key={ing} className="text-xs md:text-sm">
                           {t(`products.ingredientNames.${ing}`)}
-                        </span>
+                        </TagFormat>
                       ))}
                     </div>
                   </div>

@@ -6,6 +6,13 @@ import { Contact } from "@/components/Contact";
 import { ArrowLeft, Leaf, Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import NotFound from "@/pages/not-found";
+import { H3Format } from "@/components/ui/H3Format";
+import { H5Format } from "@/components/ui/H5Format";
+import { TagFormat } from "@/components/ui/TagFormat";
+import { H2BodyFormat } from "@/components/ui/H2BodyFormat";
+import { H3BodyFormat } from "@/components/ui/H3BodyFormat";
+import { H4BodyFormat } from "@/components/ui/H4BodyFormat";
+import { H6Format } from "@/components/ui/H6Format";
 import {
   Carousel,
   CarouselContent,
@@ -60,11 +67,11 @@ export default function ProductPage() {
             <div className="relative max-w-sm mx-auto lg:mx-0">
               {/* Product Name - Above Photo */}
               <div className="flex flex-wrap items-center gap-3 mb-4">
-                <h1 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-tight">
+                <H3Format className="text-foreground leading-tight">
                   {t(`products.${product.id}.name`)}
-                </h1>
+                </H3Format>
                 {product.bestSeller && (
-                  <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-base font-bold">
+                  <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm md:text-base font-bold">
                     <Star className="w-4 h-4 fill-current" />
                     Best Seller
                   </div>
@@ -106,16 +113,16 @@ export default function ProductPage() {
               </div>
 
               <div className="mt-6">
-                <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider mb-1">
+                <H4BodyFormat className="font-medium uppercase tracking-wider mb-1">
                   {t('productPage.price')}
-                </p>
+                </H4BodyFormat>
                 <div className="flex items-baseline gap-1">
                   <span className="text-3xl font-sans font-bold text-primary">
                     {product.price}
                   </span>
-                  <span className="text-lg font-normal text-muted-foreground">
+                  <H3BodyFormat as="span">
                     {t('productPage.unit')}
-                  </span>
+                  </H3BodyFormat>
                 </div>
               </div>
             </div>
@@ -123,77 +130,77 @@ export default function ProductPage() {
             {/* Content Section - Right Side */}
             <div className="space-y-6">
               <div>
-                <span className="text-primary font-bold tracking-wider uppercase text-base mb-3 block">
+                <H3BodyFormat className="text-primary font-bold tracking-wider uppercase mb-3 block">
                   {t(`products.${product.id}.tagline`)}
-                </span>
-                <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
+                </H3BodyFormat>
+                <H3BodyFormat className="leading-relaxed">
                   {t(`products.${product.id}.description`)}
-                </p>
+                </H3BodyFormat>
               </div>
 
 
 
               <div className="flex flex-col gap-5">
                 <div className="bg-secondary/30 rounded-2xl p-5 w-full">
-                  <h3 className="font-serif font-bold text-xl mb-4 flex items-center gap-2">
+                  <H5Format as="h5" className="mb-4 flex items-center gap-2">
                     <Leaf className="w-4 h-4 text-green-600" />
                     {t('products.ingredients')}
-                  </h3>
+                  </H5Format>
                   <div className="flex flex-wrap gap-2">
                     {product.ingredients.map((ing) => (
-                      <span key={ing} className="px-3 py-1 bg-background rounded-full text-base text-foreground font-medium border border-border shadow-sm">
+                      <TagFormat key={ing} className="text-sm md:text-base">
                         {t(`products.ingredientNames.${ing}`)}
-                      </span>
+                      </TagFormat>
                     ))}
                   </div>
                 </div>
 
                 {/* Nutrition Section - Full Width */}
                 <div className="border border-border rounded-2xl p-5 w-full">
-                  <h3 className="font-serif font-bold text-xl mb-4">{t('productPage.nutritionFacts')}</h3>
+                  <H5Format as="h3" className="mb-4">{t('productPage.nutritionFacts')}</H5Format>
 
                   {/* Serving Size */}
                   <div className="flex justify-between items-center border-b border-border pb-3 mb-3">
-                    <span className="text-base font-bold text-foreground">{t('productPage.servingSize')}</span>
-                    <span className="text-base text-foreground">{t('productPage.servingSizeValue')}</span>
+                    <span className="text-sm md:text-base font-bold text-foreground">{t('productPage.servingSize')}</span>
+                    <span className="text-sm md:text-base text-foreground">{t('productPage.servingSizeValue')}</span>
                   </div>
 
                   {/* Nutrients List */}
                   <div className="space-y-2">
                     {/* Calories */}
                     <div className="flex justify-between items-center py-1 border-b border-border/50">
-                      <span className="text-[17px] font-black text-foreground">{t('productPage.calories')}</span>
-                      <span className="text-[17px] font-black text-foreground">{product.nutrition.kcal} kcal</span>
+                      <span className="text-sm md:text-base font-black text-foreground">{t('productPage.calories')}</span>
+                      <span className="text-sm md:text-base font-black text-foreground">{product.nutrition.kcal} kcal</span>
                     </div>
 
                     {/* Total Carbohydrates */}
                     <div className="flex justify-between items-center py-1">
-                      <span className="text-base font-medium text-foreground">{t('productPage.totalCarbs')}</span>
-                      <span className="text-base font-bold text-foreground">{product.nutrition.carbs}</span>
+                      <span className="text-sm md:text-base font-medium text-foreground">{t('productPage.totalCarbs')}</span>
+                      <span className="text-sm md:text-base font-bold text-foreground">{product.nutrition.carbs}</span>
                     </div>
 
                     {/* Fiber - nested under Carbs */}
                     <div className="flex justify-between items-center py-1 pl-4 border-l-2 border-muted">
-                      <span className="text-base text-muted-foreground">{t('productPage.fiber')}</span>
-                      <span className="text-base font-medium text-foreground">{product.nutrition.fiber}</span>
+                      <span className="text-sm md:text-base text-muted-foreground">{t('productPage.fiber')}</span>
+                      <span className="text-sm md:text-base font-medium text-foreground">{product.nutrition.fiber}</span>
                     </div>
 
                     {/* Sugar - nested under Carbs */}
                     <div className="flex justify-between items-center py-1 pl-4 border-l-2 border-muted border-b border-border/50">
-                      <span className="text-base text-muted-foreground">{t('productPage.sugar')}</span>
-                      <span className="text-base font-medium text-foreground">{product.nutrition.sugar}</span>
+                      <span className="text-sm md:text-base text-muted-foreground">{t('productPage.sugar')}</span>
+                      <span className="text-sm md:text-base font-medium text-foreground">{product.nutrition.sugar}</span>
                     </div>
 
                     {/* Protein */}
                     <div className="flex justify-between items-center py-1 border-b border-border/50">
-                      <span className="text-base font-medium text-foreground">{t('productPage.protein')}</span>
-                      <span className="text-base font-bold text-foreground">{product.nutrition.protein}</span>
+                      <span className="text-sm md:text-base font-medium text-foreground">{t('productPage.protein')}</span>
+                      <span className="text-sm md:text-base font-bold text-foreground">{product.nutrition.protein}</span>
                     </div>
 
                     {/* Fat */}
                     <div className="flex justify-between items-center py-1 border-b border-border/50">
-                      <span className="text-base font-medium text-foreground">{t('productPage.fat')}</span>
-                      <span className="text-base font-bold text-foreground">{product.nutrition.fat}</span>
+                      <span className="text-sm md:text-base font-medium text-foreground">{t('productPage.fat')}</span>
+                      <span className="text-sm md:text-base font-bold text-foreground">{product.nutrition.fat}</span>
                     </div>
                   </div>
 

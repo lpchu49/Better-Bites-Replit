@@ -92,7 +92,8 @@
     "originTitle": "Được Tạo Ra Với Mục Đích",
     "originP1": "Better Bites bắt đầu trong một căn bếp nhỏ với một sự thất vọng đơn giản: tại sao hầu hết các món ăn vặt \"lành mạnh\" lại chứa đầy những thành phần mà chúng ta không thể phát âm được?",
     "originP2": "Chúng tôi mệt mỏi với việc đọc nhãn đầy chất ngọt nhân tạo, chất bảo quản và phụ gia bí ẩn. Chúng tôi khao khát điều gì đó thật — một món ăn vặt chân thật như chính hương vị ngon của nó.",
-    "originP3": "Vì vậy chúng tôi bắt đầu thử nghiệm. Chà là trở thành chất tạo ngọt tự nhiên. Hạnh nhân, hạt điều và óc chó thêm độ giòn và dinh dưỡng. Dừa, cacao và matcha mang lại hương vị và sự đa dạng. Không cần nấu nướng — chỉ là nguyên liệu thô, thuần khiết được trộn cùng nhau với sự chăm sóc.",
+    "originP3_prefix": "Kết quả: ",
+    "originP3_text": "những món ăn vặt đơn giản, giúp bạn vững tâm và cảm thấy tuyệt vời như chính hương vị của chúng.",
     "missionTitle": "Sứ Mệnh",
     "missionText": "Tạo ra những món ăn vặt sạch, lành mạnh và thật khiến bạn cảm thấy tốt. Chúng tôi ở đây để chứng minh rằng ăn uống lành mạnh không có nghĩa là hy sinh hương vị — và sự minh bạch trong thành phần nên là tiêu chuẩn, không phải ngoại lệ.",
     "visionTitle": "Tầm Nhìn",
@@ -104,7 +105,10 @@
     "madeWithLove": "Làm Với Tình Yêu",
     "madeWithLoveDesc": "Mỗi mẻ đều được làm thủ công với sự chú ý và chăm sóc.",
     "communityFirst": "Cộng Đồng Là Trên Hết",
-    "communityFirstDesc": "Chúng tôi đang xây dựng nhiều hơn một thương hiệu — chúng tôi đang xây dựng một phong trào."
+    "communityFirstDesc": "Chúng tôi đang xây dựng nhiều hơn một thương hiệu — chúng tôi đang xây dựng một phong trào.",
+    "ctaTitle": "Sẵn sàng cảm nhận sự khác biệt?",
+    "ctaText": "Trải nghiệm sự kết hợp hoàn hảo giữa sức khỏe và hương vị trong từng miếng cắn",
+    "ctaButton": "Khám Phá Hương Vị"
   },
   "contact": {
     "brandDescription": "Bánh năng lượng thủ công làm từ nguyên liệu nguyên chất. Tiếp năng lượng cho ngày mới, tự nhiên.",

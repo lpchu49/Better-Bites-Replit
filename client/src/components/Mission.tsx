@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { H2Format } from "@/components/ui/H2Format";
+import { H2BodyFormat } from "@/components/ui/H2BodyFormat";
 
 export function Mission() {
   const { t } = useTranslation();
@@ -28,26 +30,26 @@ export function Mission() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 text-foreground">
+            <H2Format className="mb-8">
               {t('mission.title')}
-            </h2>
+            </H2Format>
             <div className="prose prose-xl text-muted-foreground">
-              <p className="mb-6">
+              <H2BodyFormat className="mb-6">
                 {t('mission.paragraph1')}
-              </p>
-              <p className="mb-6">
+              </H2BodyFormat>
+              <H2BodyFormat className="mb-6">
                 {t('mission.paragraph2')}
-              </p>
-              <p>
+              </H2BodyFormat>
+              <H2BodyFormat>
                 {t('mission.paragraph3')}
-              </p>
+              </H2BodyFormat>
             </div>
 
             <div className="grid grid-cols-2 gap-4 mt-10">
               {benefits.map((benefit) => (
                 <div key={benefit} className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary" />
-                  <span className="font-medium text-foreground">{benefit}</span>
+                  <H2BodyFormat as="span" className="font-medium text-foreground">{benefit}</H2BodyFormat>
                 </div>
               ))}
             </div>

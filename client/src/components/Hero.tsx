@@ -3,6 +3,10 @@ import { useTranslation } from "react-i18next";
 import { Leaf, HandHeart, Sprout } from "lucide-react";
 import heroBg from "@assets/generated_images/rustic_table_with_date_ball_ingredients_and_negative_space.png";
 
+import { H1Format } from "./ui/H1Format";
+import { H1BodyFormat } from "./ui/H1BodyFormat";
+import { CardText } from "./ui/CardText";
+
 export function Hero() {
   const { t } = useTranslation();
 
@@ -27,37 +31,41 @@ export function Hero() {
           className="max-w-2xl bg-background/60 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-white/20 shadow-xl text-center"
         >
           <div className="flex flex-wrap justify-center gap-3 mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium tracking-wide uppercase">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground font-medium tracking-wide uppercase">
               <Leaf className="w-4 h-4" />
-              {t('hero.badge')}
+              <CardText as="span">{t('hero.badge')}</CardText>
             </span>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium tracking-wide uppercase">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground font-medium tracking-wide uppercase">
               <HandHeart className="w-4 h-4" />
-              {t('hero.badgeHandmade')}
+              <CardText as="span">{t('hero.badgeHandmade')}</CardText>
             </span>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium tracking-wide uppercase">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-secondary-foreground font-medium tracking-wide uppercase">
               <Sprout className="w-4 h-4" />
-              {t('hero.badgeVegan')}
+              <CardText as="span">{t('hero.badgeVegan')}</CardText>
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-6 leading-[1.1]">
+          <H1Format as="h1" className="mb-6">
             {t('hero.title')}
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+          </H1Format>
+          <H1BodyFormat className="mb-8 leading-relaxed">
             {t('hero.description')}
-          </p>
+          </H1BodyFormat>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#products"
               className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium text-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 transform hover:-translate-y-0.5"
             >
-              {t('hero.exploreFlavors')}
+              <H1BodyFormat as="span" className="text-primary-foreground">
+                {t('hero.exploreFlavors')}
+              </H1BodyFormat>
             </a>
             <a
               href="/about"
               className="px-8 py-4 bg-white/50 text-foreground border border-border rounded-full font-medium text-lg hover:bg-white/80 transition-all"
             >
-              {t('hero.ourStory')}
+              <H1BodyFormat as="span" className="text-foreground">
+                {t('hero.ourStory')}
+              </H1BodyFormat>
             </a>
           </div>
         </motion.div>
