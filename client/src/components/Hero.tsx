@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
 import { Leaf, HandHeart, Sprout } from "lucide-react";
 import heroBg from "@assets/generated_images/rustic_table_with_date_ball_ingredients_and_negative_space.png";
 
@@ -61,14 +62,14 @@ export function Hero() {
                 {t('hero.exploreFlavors')}
               </H2BodyFormat>
             </a>
-            <a
+            <Link
               href="/about"
               className="px-8 py-4 bg-white/50 text-foreground border border-border rounded-full font-medium hover:bg-white/80 transition-all"
             >
               <H2BodyFormat as="span" className="text-foreground">
                 {t('hero.ourStory')}
               </H2BodyFormat>
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
