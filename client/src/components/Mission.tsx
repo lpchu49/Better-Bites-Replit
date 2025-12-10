@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import { H2Format } from "@/components/ui/H2Format";
 import { H2BodyFormat } from "@/components/ui/H2BodyFormat";
 
@@ -33,7 +33,12 @@ export function Mission() {
             <H2Format className="mb-8">{t("mission.title")}</H2Format>
             <div className="prose prose-xl text-muted-foreground">
               <H2BodyFormat className="mb-6">
-                {t("mission.paragraph1")}
+                <Trans
+                  i18nKey="mission.paragraph1"
+                  components={{
+                    logo: <span className="font-serif font-bold text-primary" />
+                  }}
+                />
               </H2BodyFormat>
               <H2BodyFormat className="mb-6">
                 {t("mission.paragraph2")}

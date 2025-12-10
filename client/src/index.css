@@ -130,3 +130,15 @@
     text-wrap: balance;
   }
 }
+
+/* Vietnamese Font Override */
+.lang-vi body,
+.lang-vi p:not(.font-serif),
+.lang-vi span:not(.font-serif),
+.lang-vi div:not(.font-serif),
+.lang-vi a:not(.font-serif),
+.lang-vi button,
+.lang-vi input,
+.lang-vi textarea {
+  font-family: 'Montserrat', sans-serif !important;
+}

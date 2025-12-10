@@ -3,7 +3,7 @@ import { Contact } from "@/components/Contact";
 import { motion } from "framer-motion";
 import { Heart, Leaf, Users, Sparkles, HandHeart, Award } from "lucide-react";
 import messyDateBallsImg from "@assets/date_balls_images/messy-date-balls-assorted.png";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import { Link } from "wouter";
 import { H1Format } from "@/components/ui/H1Format";
 import { H1BodyFormat } from "@/components/ui/H1BodyFormat";
@@ -15,7 +15,8 @@ import { H4BodyFormat } from "@/components/ui/H4BodyFormat";
 import { H5Format } from "@/components/ui/H5Format";
 
 export default function About() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const BodyFormat = i18n.language === 'vi' ? H4BodyFormat : H3BodyFormat;
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
@@ -67,16 +68,15 @@ export default function About() {
                   {t('about.originTitle')}
                 </H3Format>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <H3BodyFormat>
-                    {t('about.originP1')}
-                  </H3BodyFormat>
-                  <H3BodyFormat>
-                    {t('about.originP2')}
-                  </H3BodyFormat>
-                  <H3BodyFormat>
-                    {t('about.originP3_prefix')}
-                    <span className="text-foreground">{t('about.originP3_text')}</span>
-                  </H3BodyFormat>
+                  <BodyFormat>
+                    <Trans i18nKey="about.originP1" components={{ logo: <span className="font-serif font-bold text-primary" /> }} />
+                  </BodyFormat>
+                  <BodyFormat>
+                    <Trans i18nKey="about.originP2" components={{ logo: <span className="font-serif font-bold text-primary" /> }} />
+                  </BodyFormat>
+                  <BodyFormat>
+                    {t('about.originP3')}
+                  </BodyFormat>
                 </div>
               </div>
             </motion.div>
@@ -170,7 +170,7 @@ export default function About() {
               {t('about.missionTitle')}
             </H3Format>
             <H3BodyFormat className="leading-relaxed max-w-2xl mx-auto">
-              {t('about.missionText')}
+              <Trans i18nKey="about.missionText" components={{ logo: <span className="font-serif font-bold text-primary" /> }} />
             </H3BodyFormat>
           </motion.div>
         </section>

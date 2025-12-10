@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Leaf, Star } from "lucide-react";
 import { Link } from "wouter";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import classicImg1 from "@assets/date_balls_images/classic-date-balls-1.png";
 import classicImg2 from "@assets/date_balls_images/classic-date-balls-2.png";
 import classicImg3 from "@assets/date_balls_images/classic-date-balls-3.png";
@@ -101,11 +101,11 @@ export function ProductShowcase() {
   return (
     <section id="products" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-20">
           <H2Format className="mb-6">
-            {t('products.title')}
+            <Trans i18nKey="products.title" components={{ br: <br /> }} />
           </H2Format>
-          <H2BodyFormat className="max-w-2xl mx-auto mb-16">
+          <H2BodyFormat className="max-w-4xl mx-auto mb-16">
             {t('products.subtitle')}
           </H2BodyFormat>
         </div>
@@ -138,7 +138,7 @@ export function ProductShowcase() {
                   {product.bestSeller && (
                     <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-lg text-sm md:text-base font-bold flex items-center gap-2 z-10">
                       <Star className="w-4 h-4 fill-current" />
-                      Best Seller
+                      {t('products.bestSeller')}
                     </div>
                   )}
                 </div>

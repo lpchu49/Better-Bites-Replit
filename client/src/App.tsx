@@ -12,10 +12,10 @@ import { useLocation } from "wouter";
 
 function ScrollManager() {
   const [pathname] = useLocation();
-  
+
   useEffect(() => {
     const hash = window.location.hash;
-    
+
     if (hash) {
       requestAnimationFrame(() => {
         const element = document.querySelector(hash);
@@ -42,7 +42,7 @@ function ScrollManager() {
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
-  
+
   return null;
 }
 
@@ -60,7 +60,32 @@ function Router() {
   );
 }
 
+import { useTranslation } from "react-i18next";
+
 function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      if (i18n.language === 'vi') {
+        document.body.classList.add('lang-vi');
+      } else {
+        document.body.classList.remove('lang-vi');
+      }
+    };
+
+    // Initial check
+    handleLanguageChange();
+
+    // Listen for changes
+    i18n.on('languageChanged', handleLanguageChange);
+
+    return () => {
+      i18n.off('languageChanged', handleLanguageChange);
+      document.body.classList.remove('lang-vi');
+    };
+  }, [i18n]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

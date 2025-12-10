@@ -73,7 +73,7 @@ export default function ProductPage() {
                 {product.bestSeller && (
                   <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm md:text-base font-bold">
                     <Star className="w-4 h-4 fill-current" />
-                    Best Seller
+                    {t('products.bestSeller')}
                   </div>
                 )}
               </div>
@@ -167,7 +167,7 @@ export default function ProductPage() {
 
                 {/* Nutrition Section - Full Width */}
                 <div className="border border-border rounded-2xl p-5 w-full">
-                  <H6Format as="h3" className="mb-4">{t('productPage.nutritionFacts')}</H6Format>
+                  <H5Format as="h3" className="mb-4">{t('productPage.nutritionFacts')}</H5Format>
 
                   {/* Serving Size */}
                   <div className="flex justify-between items-center border-b border-border pb-3 mb-3">

@@ -23,7 +23,11 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="text-3xl font-serif font-bold tracking-tighter text-primary">
+        <Link
+          href="/"
+          className="text-3xl font-serif font-bold tracking-tighter text-primary"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           Better Bites.
         </Link>
 
@@ -43,6 +47,7 @@ export function Navbar() {
                 key={link.key}
                 href={link.href}
                 className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
+                onClick={() => link.href === '/' && window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 {t(link.key)}
               </Link>
@@ -106,7 +111,10 @@ export function Navbar() {
                   <Link
                     key={link.key}
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {
+                      setIsOpen(false);
+                      if (link.href === '/') window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
                     className="text-lg font-medium text-foreground/90"
                   >
                     {t(link.key)}

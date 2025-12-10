@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import { Link } from "wouter";
 import { Leaf, HandHeart, Sprout } from "lucide-react";
 import heroBg from "@assets/generated_images/rustic_table_with_date_ball_ingredients_and_negative_space.png";
@@ -48,7 +48,7 @@ export function Hero() {
             </span>
           </div>
           <H1Format as="h1" className="mb-6">
-            {t('hero.title')}
+            <Trans i18nKey="hero.title" components={{ br: <br /> }} />
           </H1Format>
           <H1BodyFormat className="mb-8 leading-relaxed">
             {t('hero.description')}

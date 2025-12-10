@@ -16,9 +16,10 @@
     "ourStory": "Our Story"
   },
   "products": {
-    "title": "Real. Simple. Joy",
-    "subtitle": "Four distinct flavors, one simple philosophy: real food tastes better.",
+    "title": "Energy from nature.",
+    "subtitle": "Four signature flavors, one simple philosophy: real food tastes better.",
     "ingredients": "Ingredients",
+    "bestSeller": "Best Seller",
     "kcalPerBall": "kcal / ball",
     "classic": {
       "name": "Classic",
@@ -94,9 +95,8 @@
     "subtitle": "A passion for wholesome, delicious snacks made with real & simple ingredients",
     "originTitle": "Crafted with Purpose",
     "originP1": "We were tired of reading food labels that are packed with artificial sweeteners, preservatives, and unpronounceable additives. We craved something real - food that was honest as it was delicious, the kind of simple, recognizable ingredients our parents and grandparents used in their own kitchens.",
-    "originP2": "That’s where the idea for Better Bites took root. Snacks made with honesty, transparency and integrity, without compromising on taste. We began in a small kitchen, using dates as natural sweetener, adding almonds, cashews and walnuts for natural crunch and nutrition. Coconut, cacao, and matcha brought depth and variety. No cooking required, just raw ingredients blended together with care. ",
-    "originP3_prefix": "The result: ",
-    "originP3_text": "simple, grounding snacks that feel as good as they taste.",
+    "originP2": "That’s where the idea for <logo>Better Bites</logo> took root. Snacks made with honesty, transparency and integrity, without compromising on taste. We began in a small kitchen, using dates as natural sweetener, adding almonds, cashews and walnuts for natural crunch and nutrition. Coconut, cacao, and matcha brought depth and variety. No cooking required, just raw ingredients blended together with care. ",
+    "originP3": "The result: simple, grounding snacks that feel as good as they taste.",
     "missionTitle": "Our Mission",
     "missionText": "To provide wholesome, delicious snacks that fuel your active lifestyle while staying true to our commitment to natural ingredients, sustainable practices. We're here to prove that healthy eating doesn't mean sacrificing taste, and that transparency in ingredients should be the norm, not the exception.",
     "whatWeStandForTitle": "What We Stand For",
