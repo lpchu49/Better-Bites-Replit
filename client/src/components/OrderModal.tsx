@@ -1,166 +1,71 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
-import { useTranslation } from "react-i18next";
-import type { InsertOrder } from "@shared/schema";
+import { useTranslation, Trans } from "react-i18next";
+import { motion, AnimatePresence } from "framer-motion";
+import zaloLogo from "@assets/logos/zalo-logo.png";
+import { H3Format } from "./ui/H3Format";
+import { H3BodyFormat } from "./ui/H3BodyFormat";
 
 interface OrderModalProps {
   children: React.ReactNode;
   defaultProduct?: string;
 }
 
-export function OrderModal({ children, defaultProduct }: OrderModalProps) {
+export function OrderModal({ children }: OrderModalProps) {
   const [open, setOpen] = useState(false);
-  const { toast } = useToast();
   const { t } = useTranslation();
-  const [selectedProduct, setSelectedProduct] = useState(
-    defaultProduct || "assorted",
-  );
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<InsertOrder>({
-    defaultValues: {
-      product: defaultProduct || "assorted",
-    },
-  });
-
-  const orderMutation = useMutation({
-    mutationFn: async (data: InsertOrder) => {
-      const response = await fetch("/api/orders", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || "Failed to submit order");
-      }
-
-      return response.json();
-    },
-    onSuccess: () => {
-      setOpen(false);
-      reset();
-      toast({
-        title: t('order.successTitle'),
-        description: t('order.successDescription'),
-      });
-    },
-    onError: (error: Error) => {
-      toast({
-        title: t('order.errorTitle'),
-        description: error.message || t('order.errorDescription'),
-        variant: "destructive",
-      });
-    },
-  });
-
-  const onSubmit = (data: InsertOrder) => {
-    orderMutation.mutate({
-      ...data,
-      product: selectedProduct,
-    });
-  };
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[500px] bg-background border-border">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-serif font-bold text-foreground">
-            {t('order.title')}
-          </DialogTitle>
-          <DialogDescription>
-            {t('order.description')}
-          </DialogDescription>
-        </DialogHeader>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mt-4">
-          <div className="grid gap-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">{t('order.name')}</Label>
-                <Input
-                  id="name"
-                  placeholder={t('order.namePlaceholder')}
-                  {...register("name", { required: true })}
-                />
-                {errors.name && (
-                  <span className="text-xs text-destructive">
-                    {t('order.nameRequired')}
-                  </span>
-                )}
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="phone">{t('order.phone')}</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder={t('order.phonePlaceholder')}
-                  {...register("phone")}
-                />
-              </div>
-            </div>
+      <DialogContent className="sm:max-w-[425px] p-0 overflow-hidden bg-background/80 backdrop-blur-xl border-white/20 shadow-2xl rounded-3xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/20 pointer-events-none" />
 
-            <div className="space-y-2">
-              <Label htmlFor="email">{t('order.email')}</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder={t('order.emailPlaceholder')}
-                {...register("email", { required: true })}
+        <div className="relative p-10 flex flex-col items-center text-center space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="space-y-6 max-w-md mx-auto"
+          >
+            <H3Format className="text-3xl font-bold text-foreground">
+              {t('order.readyToOrder')}
+            </H3Format>
+
+            <H3BodyFormat className="text-lg text-muted-foreground leading-relaxed">
+              <Trans
+                i18nKey="order.zaloInstruction"
+                components={{
+                  logo: (
+                    <img
+                      src={zaloLogo}
+                      alt="Zalo"
+                      className="inline-block w-8 h-8 object-contain mx-1 -mt-1 drop-shadow-sm align-middle"
+                    />
+                  ),
+                }}
               />
-              {errors.email && (
-                <span className="text-xs text-destructive">
-                  {t('order.emailRequired')}
-                </span>
-              )}
-            </div>
+            </H3BodyFormat>
+          </motion.div>
 
-            <div className="space-y-2">
-              <Label htmlFor="message">{t('order.yourOrder')}</Label>
-              <Textarea
-                id="message"
-                placeholder={t('order.orderPlaceholder')}
-                {...register("message")}
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-end gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
             <Button
-              type="button"
-              variant="outline"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-primary/25 transition-all transform hover:-translate-y-0.5"
               onClick={() => setOpen(false)}
             >
-              {t('order.cancel')}
+              {t('nav.close')}
             </Button>
-            <Button
-              type="submit"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-              disabled={orderMutation.isPending}
-            >
-              {orderMutation.isPending ? t('order.sending') : t('order.sendRequest')}
-            </Button>
-          </div>
-        </form>
+          </motion.div>
+        </div>
       </DialogContent>
     </Dialog>
   );

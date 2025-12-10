@@ -57,7 +57,7 @@ export function Navbar() {
             {i18n.language === 'en' ? 'VI' : 'EN'}
           </button>
           <OrderModal>
-            <button className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-lg font-medium hover:bg-primary/90 transition-colors shadow-sm cursor-pointer">
+            <button className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-lg font-bold hover:bg-primary/90 transition-colors shadow-sm cursor-pointer">
               {t('nav.orderNow')}
             </button>
           </OrderModal>
@@ -112,7 +112,7 @@ export function Navbar() {
                 {i18n.language === 'en' ? 'Tiếng Việt' : 'English'}
               </button>
               <OrderModal>
-                <button className="bg-primary text-primary-foreground w-full py-3 rounded-full font-medium mt-2 cursor-pointer">
+                <button className="bg-primary text-primary-foreground w-full py-3 rounded-full font-bold mt-2 cursor-pointer">
                   {t('nav.orderNow')}
                 </button>
               </OrderModal>

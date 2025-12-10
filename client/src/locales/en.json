@@ -3,7 +3,8 @@
     "home": "Home",
     "ourProducts": "Our Products",
     "aboutUs": "About Us",
-    "orderNow": "Order Now"
+    "orderNow": "Order Now",
+    "close": "Close"
   },
   "hero": {
     "badge": "100% Natural",
@@ -136,6 +137,8 @@
     "successTitle": "Order Request Sent!",
     "successDescription": "We'll be in touch shortly to confirm your order details.",
     "errorTitle": "Error",
-    "errorDescription": "Failed to submit order. Please try again."
+    "errorDescription": "Failed to submit order. Please try again.",
+    "zaloInstruction": "Send us a <logo/> message at (+84) 0382319704 with your requests and we'll get everything ready for you!",
+    "readyToOrder": "Ready to Order?"
   }
 }

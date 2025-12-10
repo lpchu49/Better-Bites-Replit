@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertOrderSchema } from "@shared/schema";
 import { fromError } from "zod-validation-error";
-import { sendOrderConfirmationEmail } from "./email";
+
 
 export async function registerRoutes(
   httpServer: Server,
@@ -13,17 +13,18 @@ export async function registerRoutes(
     try {
       const validatedData = insertOrderSchema.parse(req.body);
       const order = await storage.createOrder(validatedData);
-      
-      // Send confirmation emails (don't await to avoid delaying response)
-      sendOrderConfirmationEmail(order).catch(err => {
-        console.error("Email sending failed:", err);
-      });
-      
+
+
+      // Email sending removed as per request to simplify order process
+      // sendOrderConfirmationEmail(order).catch(err => {
+      //   console.error("Email sending failed:", err);
+      // });
+
       res.json(order);
     } catch (error: any) {
       if (error.name === "ZodError") {
-        return res.status(400).json({ 
-          error: fromError(error).toString() 
+        return res.status(400).json({
+          error: fromError(error).toString()
         });
       }
       console.error("Error creating order:", error);

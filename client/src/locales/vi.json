@@ -3,25 +3,26 @@
     "home": "Trang Chủ",
     "ourProducts": "Sản Phẩm",
     "aboutUs": "Về Chúng Tôi",
-    "orderNow": "Đặt Hàng"
+    "orderNow": "Đặt Hàng",
+    "close": "Đóng"
   },
   "hero": {
     "badge": "100% Tự Nhiên",
     "badgeHandmade": "Thủ Công",
     "badgeVegan": "Thuần Chay",
-    "title": "Trở về với thực phẩm thật.",
-    "description": "Viên năng lượng làm thủ công từ các loại hạt và hoa quả sấy khô. Không thêm đường, không chất bảo quản, không hương liệu. Quay về với vị thật, sống sạch từ gốc.",
-    "exploreFlavors": "Khám phá các hương vị",
-    "ourStory": "Câu chuyện của chúng tôi"
+    "title": "Quay về vị thật, sống sạch từ gốc.",
+    "description": "Viên năng lượng làm thủ công từ các loại hạt và hoa quả sấy khô. Không thêm đường, không chất bảo quản, không hương liệu.",
+    "exploreFlavors": "Sản Phẩm",
+    "ourStory": "Về Chúng Tôi"
   },
   "products": {
-    "title": "Đơn Giản. Thật. Ngon.",
+    "title": "Năng lượng đến từ tự nhiên.",
     "subtitle": "Bốn hương vị đặc trưng, một triết lý đơn giản: thực phẩm thật ngon hơn.",
     "ingredients": "Thành Phần",
     "kcalPerBall": "kcal / viên",
     "classic": {
       "name": "Classic",
-      "tagline": "Hoàn hảo đơn giản",
+      "tagline": "Thuần vị nguyên bản",
       "shortDescription": "Chà là ngọt, hạnh nhân giòn và dừa nhiệt đới.",
       "description": "Viên chà là đặc trưng đã bắt đầu tất cả. Sự kết hợp hài hòa của chà là ngọt, hạnh nhân giòn và dừa nhiệt đới. Thuần khiết, đơn giản và ngon tuyệt."
     },
@@ -139,6 +140,8 @@
     "successTitle": "Đã Gửi Yêu Cầu Đặt Hàng!",
     "successDescription": "Chúng tôi sẽ liên hệ sớm để xác nhận chi tiết đơn hàng của bạn.",
     "errorTitle": "Lỗi",
-    "errorDescription": "Không thể gửi đơn hàng. Vui lòng thử lại."
+    "errorDescription": "Không thể gửi đơn hàng. Vui lòng thử lại.",
+    "zaloInstruction": "Vui lòng gửi <logo/> nhắn tin qua số (+84) 0382319704 để chúng tôi chuẩn bị đơn hàng cho bạn!",
+    "readyToOrder": "Bạn muốn đặt hàng?"
   }
 }
